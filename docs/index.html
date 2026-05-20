@@ -5,19 +5,34 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Forge Apps | Work, Pay, and Planning Tools</title>
   <meta name="description" content="The support and product hub for PayForge, ForgeShift, and ForgeTrack." />
-  <link rel="stylesheet" href="./styles.css?v=20260520-2" />
+  <script>
+    (function () {
+      try {
+        var theme = localStorage.getItem('forge-theme') || 'system';
+        if (theme !== 'system') document.documentElement.dataset.theme = theme;
+      } catch (error) {}
+    })();
+  </script>
+  <link rel="stylesheet" href="./styles.css?v=20260520-4" />
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
   <div class="site-shell">
     <nav class="navbar glass" aria-label="Main navigation">
       <a class="brand" href="./" aria-label="Forge Apps home"><span class="brand-mark">F</span><span>Forge Apps</span></a>
-      <div class="nav-links">
-        <a href="./" aria-current="page">Home</a>
-        <a href="./payforge.html">PayForge</a>
-        <a href="./forgeshift.html">ForgeShift</a>
-        <a href="./forgetrack.html">ForgeTrack</a>
-        <a href="./contact.html">Contact</a>
+      <div class="nav-actions">
+        <div class="nav-links">
+          <a href="./" aria-current="page">Home</a>
+          <a href="./payforge.html">PayForge</a>
+          <a href="./forgeshift.html">ForgeShift</a>
+          <a href="./forgetrack.html">ForgeTrack</a>
+          <a href="./contact.html">Contact</a>
+        </div>
+        <div class="theme-switcher" role="group" aria-label="Theme preference">
+          <button type="button" data-theme-choice="system" aria-pressed="true">System</button>
+          <button type="button" data-theme-choice="light" aria-pressed="false">Light</button>
+          <button type="button" data-theme-choice="dark" aria-pressed="false">Dark</button>
+        </div>
       </div>
     </nav>
 
@@ -34,9 +49,9 @@
           </div>
         </div>
         <div class="device-stack" aria-label="Forge app highlights">
-          <div class="device-card glass"><span>PayForge</span><strong>Estimate take-home pay before payday.</strong></div>
-          <div class="device-card glass"><span>ForgeShift</span><strong>Plan shifts with pay-aware structure.</strong></div>
-          <div class="device-card glass"><span>ForgeTrack</span><strong>Keep important work signals visible.</strong></div>
+          <div class="device-card glass"><span><img src="./assets/payforge-icon.png" data-light-src="./assets/payforge-icon.png" data-dark-src="./assets/payforge-icon-dark.png" data-theme-icon alt="PayForge app icon" width="64" height="64" /> PayForge</span><strong>Estimate take-home pay before payday.</strong></div>
+          <div class="device-card glass"><span><img src="./assets/forgeshift-icon.png" data-light-src="./assets/forgeshift-icon.png" data-dark-src="./assets/forgeshift-icon-dark.png" data-theme-icon alt="ForgeShift app icon" width="64" height="64" /> ForgeShift</span><strong>Plan shifts with pay-aware structure.</strong></div>
+          <div class="device-card glass"><span><img src="./assets/forgetrack-icon.png" data-light-src="./assets/forgetrack-icon.png" data-dark-src="./assets/forgetrack-icon-dark.png" data-theme-icon alt="ForgeTrack app icon" width="64" height="64" /> ForgeTrack</span><strong>Keep important work signals visible.</strong></div>
         </div>
       </header>
 
@@ -50,19 +65,19 @@
         </div>
         <div class="grid">
           <article class="product-card tile">
-            <div class="product-icon">PF</div>
+            <div class="product-icon"><img src="./assets/payforge-icon.png" data-light-src="./assets/payforge-icon.png" data-dark-src="./assets/payforge-icon-dark.png" data-theme-icon alt="PayForge app icon" width="64" height="64" /></div>
             <h3>PayForge</h3>
             <p>Salary, shift, tax, and quick pay estimation tools for understanding what upcoming work may be worth.</p>
             <a class="btn" href="./payforge.html">View PayForge</a>
           </article>
           <article class="product-card tile">
-            <div class="product-icon">FS</div>
+            <div class="product-icon"><img src="./assets/forgeshift-icon.png" data-light-src="./assets/forgeshift-icon.png" data-dark-src="./assets/forgeshift-icon-dark.png" data-theme-icon alt="ForgeShift app icon" width="64" height="64" /></div>
             <h3>ForgeShift</h3>
             <p>Shift planning, logging, and pay-aware scheduling workflows for people who need more than a basic calendar.</p>
             <a class="btn" href="./forgeshift.html">View ForgeShift</a>
           </article>
           <article class="product-card tile">
-            <div class="product-icon">FT</div>
+            <div class="product-icon"><img src="./assets/forgetrack-icon.png" data-light-src="./assets/forgetrack-icon.png" data-dark-src="./assets/forgetrack-icon-dark.png" data-theme-icon alt="ForgeTrack app icon" width="64" height="64" /></div>
             <h3>ForgeTrack</h3>
             <p>Tracking and workflow tooling that helps keep your Forge setup organised across recurring tasks and activity.</p>
             <a class="btn" href="./forgetrack.html">View ForgeTrack</a>
@@ -120,5 +135,6 @@
       <span><a href="./privacy.html">Privacy</a> &middot; <a href="./terms.html">Terms</a> &middot; <a href="./contact.html">Contact</a></span>
     </footer>
   </div>
+  <script src="./site.js?v=20260520-4"></script>
 </body>
 </html>

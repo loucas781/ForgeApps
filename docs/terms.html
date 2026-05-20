@@ -5,15 +5,34 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Terms of Use | Forge Apps</title>
   <meta name="description" content="Terms of use for the Forge suite of applications." />
-  <link rel="stylesheet" href="./styles.css?v=20260520-2" />
+  <script>
+    (function () {
+      try {
+        var theme = localStorage.getItem('forge-theme') || 'system';
+        if (theme !== 'system') document.documentElement.dataset.theme = theme;
+      } catch (error) {}
+    })();
+  </script>
+  <link rel="stylesheet" href="./styles.css?v=20260520-4" />
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
   <div class="site-shell">
     <nav class="navbar glass" aria-label="Main navigation">
-      <a class="brand" href="./"><span class="brand-mark">F</span><span>Forge Apps</span></a>
-      <div class="nav-links">
-        <a href="./">Home</a><a href="./payforge.html">PayForge</a><a href="./forgeshift.html">ForgeShift</a><a href="./forgetrack.html">ForgeTrack</a><a href="./contact.html">Contact</a>
+      <a class="brand" href="./" aria-label="Forge Apps home"><span class="brand-mark">F</span><span>Forge Apps</span></a>
+      <div class="nav-actions">
+        <div class="nav-links">
+          <a href="./">Home</a>
+          <a href="./payforge.html">PayForge</a>
+          <a href="./forgeshift.html">ForgeShift</a>
+          <a href="./forgetrack.html">ForgeTrack</a>
+          <a href="./contact.html">Contact</a>
+        </div>
+        <div class="theme-switcher" role="group" aria-label="Theme preference">
+          <button type="button" data-theme-choice="system" aria-pressed="true">System</button>
+          <button type="button" data-theme-choice="light" aria-pressed="false">Light</button>
+          <button type="button" data-theme-choice="dark" aria-pressed="false">Dark</button>
+        </div>
       </div>
     </nav>
     <main id="main">
@@ -32,5 +51,6 @@
     </main>
     <footer class="footer"><span>&copy; 2026 Forge Apps</span><span><a href="./privacy.html">Privacy</a> &middot; <a href="./terms.html">Terms</a> &middot; <a href="./contact.html">Contact</a></span></footer>
   </div>
+  <script src="./site.js?v=20260520-4"></script>
 </body>
 </html>
