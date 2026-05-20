@@ -49,9 +49,21 @@ const applyTheme = (theme) => {
 
 applyTheme(getStoredTheme());
 
+const animateThemeChange = () => {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  document.documentElement.classList.add('theme-transitioning');
+  window.setTimeout(() => {
+    document.documentElement.classList.remove('theme-transitioning');
+  }, 460);
+};
+
 themeButtons.forEach((button) => {
   button.addEventListener('click', () => {
     const theme = button.dataset.themeChoice || 'system';
+    if (theme === getStoredTheme()) return;
+
+    animateThemeChange();
     storeTheme(theme);
     applyTheme(theme);
   });
