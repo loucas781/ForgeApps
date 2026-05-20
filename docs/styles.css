@@ -118,10 +118,7 @@ html { scroll-behavior: smooth; }
       background-color 0.42s ease,
       background 0.42s ease,
       border-color 0.42s ease,
-      box-shadow 0.42s ease,
-      color 0.42s ease,
-      opacity 0.42s ease,
-      filter 0.42s ease !important;
+      box-shadow 0.42s ease !important;
   }
 }
 
@@ -157,8 +154,8 @@ body::before {
     linear-gradient(90deg, var(--grid-line-strong) 1px, transparent 1px),
     linear-gradient(var(--grid-line) 1px, transparent 1px),
     linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
-  background-position: 0 0, 0 0, 22px 22px, 22px 22px;
-  background-size: 44px 44px;
+  background-position: 0 0, 0 0, 34px 34px, 34px 34px;
+  background-size: 68px 68px;
   mask-image: linear-gradient(to bottom, var(--grid-mask), transparent 76%);
 }
 
