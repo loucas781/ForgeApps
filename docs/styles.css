@@ -450,13 +450,23 @@ p { line-height: 1.65; }
 }
 
 .device-card {
+  --card-x: 0px;
+  --card-y: 0px;
+  --card-rotation: -1.2deg;
   min-height: 132px;
   padding: 22px;
-  transform: rotate(-1.2deg);
+  transform: translate(var(--card-x), var(--card-y)) rotate(var(--card-rotation));
 }
 
-.device-card:nth-child(2) { transform: translateX(14px) rotate(1.2deg); }
-.device-card:nth-child(3) { transform: translateX(-6px) rotate(-0.8deg); }
+.device-card:nth-child(2) {
+  --card-x: 14px;
+  --card-rotation: 1.2deg;
+}
+
+.device-card:nth-child(3) {
+  --card-x: -6px;
+  --card-rotation: -0.8deg;
+}
 
 .device-card span {
   display: inline-flex;
@@ -825,6 +835,6 @@ a { color: var(--accent); }
 }
 
 @keyframes drift {
-  from { transform: translateY(0) rotate(-1.2deg); }
-  to { transform: translateY(-8px) rotate(-1.2deg); }
+  from { transform: translate(var(--card-x), var(--card-y)) rotate(var(--card-rotation)); }
+  to { transform: translate(var(--card-x), calc(var(--card-y) - 8px)) rotate(var(--card-rotation)); }
 }
