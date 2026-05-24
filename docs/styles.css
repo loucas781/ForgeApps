@@ -450,7 +450,7 @@ p { line-height: 1.65; }
 }
 
 .device-card {
-  animation: drift-payforge 4.8s ease-in-out infinite alternate;
+  animation: drift-payforge 6s ease-in-out infinite alternate;
   min-height: 132px;
   padding: 22px;
   transform: translate3d(0, 0, 0) rotate(-1.2deg);
@@ -467,20 +467,6 @@ p { line-height: 1.65; }
   animation-delay: 1.2s;
   animation-name: drift-forgetrack;
   transform: translate3d(-6px, 0, 0) rotate(-0.8deg);
-}
-
-.device-card::after {
-  content: "";
-  position: absolute;
-  top: -30%;
-  bottom: -30%;
-  left: -55%;
-  width: 42%;
-  pointer-events: none;
-  background: linear-gradient(100deg, transparent, rgba(255,255,255,0.26), transparent);
-  transform: translateX(-80%) rotate(10deg);
-  animation: card-sheen 5.6s ease-in-out infinite;
-  animation-delay: inherit;
 }
 
 .device-card span {
@@ -846,8 +832,7 @@ a { color: var(--accent); }
 @media (prefers-reduced-motion: reduce) {
   .device-card,
   .device-card:nth-child(2),
-  .device-card:nth-child(3),
-  .device-card::after {
+  .device-card:nth-child(3) {
     animation: none;
   }
 }
@@ -859,21 +844,15 @@ a { color: var(--accent); }
 
 @keyframes drift-payforge {
   from { transform: translate3d(0, 0, 0) rotate(-1.2deg); }
-  to { transform: translate3d(0, -14px, 0) rotate(-1.2deg); }
+  to { transform: translate3d(0, -8px, 0) rotate(-1.2deg); }
 }
 
 @keyframes drift-forgeshift {
   from { transform: translate3d(14px, 0, 0) rotate(1.2deg); }
-  to { transform: translate3d(14px, -14px, 0) rotate(1.2deg); }
+  to { transform: translate3d(14px, -8px, 0) rotate(1.2deg); }
 }
 
 @keyframes drift-forgetrack {
   from { transform: translate3d(-6px, 0, 0) rotate(-0.8deg); }
-  to { transform: translate3d(-6px, -14px, 0) rotate(-0.8deg); }
-}
-
-@keyframes card-sheen {
-  0%, 45% { transform: translateX(-90%) rotate(10deg); opacity: 0; }
-  55% { opacity: 1; }
-  100% { transform: translateX(420%) rotate(10deg); opacity: 0; }
+  to { transform: translate3d(-6px, -8px, 0) rotate(-0.8deg); }
 }
