@@ -551,7 +551,14 @@ p { line-height: 1.65; }
   object-fit: cover;
 }
 
-.product-card .btn { margin-top: auto; }
+.product-card .btn { margin-top: 0; }
+
+.product-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: auto;
+}
 
 .app-heading {
   display: flex;
