@@ -450,22 +450,17 @@ p { line-height: 1.65; }
 }
 
 .device-card {
-  --card-x: 0px;
-  --card-y: 0px;
-  --card-rotation: -1.2deg;
   min-height: 132px;
   padding: 22px;
-  transform: translate(var(--card-x), var(--card-y)) rotate(var(--card-rotation));
+  transform: rotate(-1.2deg);
 }
 
 .device-card:nth-child(2) {
-  --card-x: 14px;
-  --card-rotation: 1.2deg;
+  transform: translateX(14px) rotate(1.2deg);
 }
 
 .device-card:nth-child(3) {
-  --card-x: -6px;
-  --card-rotation: -0.8deg;
+  transform: translateX(-6px) rotate(-0.8deg);
 }
 
 .device-card span {
@@ -824,9 +819,9 @@ a { color: var(--accent); }
 
   .section:nth-of-type(2) { animation-delay: 0.08s; }
   .section:nth-of-type(3) { animation-delay: 0.16s; }
-  .device-card { animation: drift 6s ease-in-out infinite alternate; }
-  .device-card:nth-child(2) { animation-delay: 0.7s; }
-  .device-card:nth-child(3) { animation-delay: 1.2s; }
+  .device-card { animation: drift-payforge 6s ease-in-out infinite alternate; }
+  .device-card:nth-child(2) { animation-name: drift-forgeshift; animation-delay: 0.7s; }
+  .device-card:nth-child(3) { animation-name: drift-forgetrack; animation-delay: 1.2s; }
 }
 
 @keyframes float-in {
@@ -834,7 +829,17 @@ a { color: var(--accent); }
   to { opacity: 1; transform: translateY(0); }
 }
 
-@keyframes drift {
-  from { transform: translate(var(--card-x), var(--card-y)) rotate(var(--card-rotation)); }
-  to { transform: translate(var(--card-x), calc(var(--card-y) - 8px)) rotate(var(--card-rotation)); }
+@keyframes drift-payforge {
+  from { transform: translateY(0) rotate(-1.2deg); }
+  to { transform: translateY(-8px) rotate(-1.2deg); }
+}
+
+@keyframes drift-forgeshift {
+  from { transform: translate(14px, 0) rotate(1.2deg); }
+  to { transform: translate(14px, -8px) rotate(1.2deg); }
+}
+
+@keyframes drift-forgetrack {
+  from { transform: translate(-6px, 0) rotate(-0.8deg); }
+  to { transform: translate(-6px, -8px) rotate(-0.8deg); }
 }
