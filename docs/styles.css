@@ -555,9 +555,37 @@ p { line-height: 1.65; }
 
 .product-actions {
   display: flex;
+  align-items: center;
   flex-wrap: wrap;
   gap: 10px;
   margin-top: auto;
+}
+
+.store-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  line-height: 0;
+  text-decoration: none;
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.store-link:hover {
+  filter: brightness(1.04);
+  transform: translateY(-2px);
+}
+
+.store-link:focus-visible {
+  outline: 3px solid var(--ring);
+  outline-offset: 4px;
+}
+
+.store-badge {
+  display: block;
+  width: 150px;
+  max-width: 100%;
+  height: auto;
 }
 
 .app-heading {
