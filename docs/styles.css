@@ -450,23 +450,18 @@ p { line-height: 1.65; }
 }
 
 .device-card {
-  animation: crack-payforge 3.6s cubic-bezier(0.42, 0, 0.2, 1) infinite;
   min-height: 132px;
   padding: 22px;
-  transform: translate3d(0, 0, 0) rotate(-1.2deg) skewX(-0.3deg);
+  transform: translate3d(-3px, 0, 0) rotate(-1.4deg) skewX(-0.35deg);
   will-change: transform;
 }
 
 .device-card:nth-child(2) {
-  animation-delay: 0.45s;
-  animation-name: crack-forgeshift;
-  transform: translate3d(14px, 0, 0) rotate(1.2deg) skewX(0.25deg);
+  transform: translate3d(-1px, 0, 0) rotate(-0.55deg) skewX(-0.2deg);
 }
 
 .device-card:nth-child(3) {
-  animation-delay: 0.9s;
-  animation-name: crack-forgetrack;
-  transform: translate3d(-6px, 0, 0) rotate(-0.8deg) skewX(-0.2deg);
+  transform: translate3d(-6px, 0, 0) rotate(-1.85deg) skewX(-0.45deg);
 }
 
 .device-card span {
@@ -822,6 +817,17 @@ a { color: var(--accent); }
 
   .section:nth-of-type(2) { animation-delay: 0.08s; }
   .section:nth-of-type(3) { animation-delay: 0.16s; }
+  .device-card {
+    animation: plank-drop-payforge 820ms cubic-bezier(0.2, 0.9, 0.22, 1) both;
+  }
+  .device-card:nth-child(2) {
+    animation-name: plank-drop-forgeshift;
+    animation-delay: 0.1s;
+  }
+  .device-card:nth-child(3) {
+    animation-name: plank-drop-forgetrack;
+    animation-delay: 0.2s;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -837,26 +843,20 @@ a { color: var(--accent); }
   to { opacity: 1; transform: translateY(0); }
 }
 
-@keyframes crack-payforge {
-  0%, 100% { transform: translate3d(0, 0, 0) rotate(-1.2deg) skewX(-0.3deg); }
-  18% { transform: translate3d(1px, -3px, 0) rotate(-1.9deg) skewX(-0.8deg); }
-  36% { transform: translate3d(-1px, -1px, 0) rotate(-0.7deg) skewX(0deg); }
-  55% { transform: translate3d(1px, -6px, 0) rotate(-2.1deg) skewX(-1deg); }
-  74% { transform: translate3d(-1px, -2px, 0) rotate(-0.9deg) skewX(-0.2deg); }
+@keyframes plank-drop-payforge {
+  0% { transform: translate3d(0, -16px, 0) rotate(0deg) skewX(0deg); }
+  64% { transform: translate3d(-5px, 3px, 0) rotate(-2.1deg) skewX(-0.6deg); }
+  100% { transform: translate3d(-3px, 0, 0) rotate(-1.4deg) skewX(-0.35deg); }
 }
 
-@keyframes crack-forgeshift {
-  0%, 100% { transform: translate3d(14px, 0, 0) rotate(1.2deg) skewX(0.25deg); }
-  20% { transform: translate3d(15px, -2px, 0) rotate(2deg) skewX(0.8deg); }
-  38% { transform: translate3d(13px, -1px, 0) rotate(0.7deg) skewX(0deg); }
-  56% { transform: translate3d(15px, -5px, 0) rotate(2.3deg) skewX(1deg); }
-  76% { transform: translate3d(13px, -2px, 0) rotate(1deg) skewX(0.3deg); }
+@keyframes plank-drop-forgeshift {
+  0% { transform: translate3d(0, -16px, 0) rotate(0deg) skewX(0deg); }
+  64% { transform: translate3d(-3px, 3px, 0) rotate(-1.2deg) skewX(-0.45deg); }
+  100% { transform: translate3d(-1px, 0, 0) rotate(-0.55deg) skewX(-0.2deg); }
 }
 
-@keyframes crack-forgetrack {
-  0%, 100% { transform: translate3d(-6px, 0, 0) rotate(-0.8deg) skewX(-0.2deg); }
-  22% { transform: translate3d(-5px, -2px, 0) rotate(-1.5deg) skewX(-0.8deg); }
-  40% { transform: translate3d(-7px, -1px, 0) rotate(-0.3deg) skewX(0deg); }
-  58% { transform: translate3d(-5px, -5px, 0) rotate(-1.8deg) skewX(-1deg); }
-  78% { transform: translate3d(-7px, -2px, 0) rotate(-0.6deg) skewX(-0.3deg); }
+@keyframes plank-drop-forgetrack {
+  0% { transform: translate3d(0, -16px, 0) rotate(0deg) skewX(0deg); }
+  64% { transform: translate3d(-8px, 3px, 0) rotate(-2.5deg) skewX(-0.7deg); }
+  100% { transform: translate3d(-6px, 0, 0) rotate(-1.85deg) skewX(-0.45deg); }
 }
