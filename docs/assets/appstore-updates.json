@@ -1,0 +1,43 @@
+{
+  "source": "itunes-lookup",
+  "country": "gb",
+  "generatedAt": null,
+  "apps": {
+    "payforge": {
+      "key": "payforge",
+      "name": "PayForge",
+      "appId": "6766063577",
+      "status": "unknown",
+      "version": null,
+      "releaseDate": null,
+      "notes": null,
+      "appStoreUrl": "https://apps.apple.com/gb/app/payforge/id6766063577?uo=4",
+      "previousVersion": null,
+      "hasUpdate": false
+    },
+    "forgeshift": {
+      "key": "forgeshift",
+      "name": "ForgeShift",
+      "appId": "6762021609",
+      "status": "unknown",
+      "version": null,
+      "releaseDate": null,
+      "notes": null,
+      "appStoreUrl": "https://apps.apple.com/gb/app/forgeshift/id6762021609?uo=4",
+      "previousVersion": null,
+      "hasUpdate": false
+    },
+    "forgetrack": {
+      "key": "forgetrack",
+      "name": "ForgeTrack",
+      "appId": null,
+      "status": "missing_app_id",
+      "version": null,
+      "releaseDate": null,
+      "notes": null,
+      "appStoreUrl": null,
+      "previousVersion": null,
+      "hasUpdate": false
+    }
+  }
+}
