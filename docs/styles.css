@@ -764,11 +764,6 @@ a { color: var(--accent); }
   .check-list { grid-template-columns: 1fr; }
   .section-header { align-items: flex-start; flex-direction: column; }
   .form-row { grid-template-columns: 1fr; }
-  .device-card,
-  .device-card:nth-child(2),
-  .device-card:nth-child(3) {
-    transform: translate3d(0, 0, 0) rotate(0deg);
-  }
   .footer { flex-direction: column; }
 }
 
