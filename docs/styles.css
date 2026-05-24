@@ -450,16 +450,22 @@ p { line-height: 1.65; }
 }
 
 .device-card {
+  animation: drift-payforge 6s ease-in-out infinite alternate;
   min-height: 132px;
   padding: 22px;
   transform: rotate(-1.2deg);
+  will-change: transform;
 }
 
 .device-card:nth-child(2) {
+  animation-delay: 0.7s;
+  animation-name: drift-forgeshift;
   transform: translateX(14px) rotate(1.2deg);
 }
 
 .device-card:nth-child(3) {
+  animation-delay: 1.2s;
+  animation-name: drift-forgetrack;
   transform: translateX(-6px) rotate(-0.8deg);
 }
 
@@ -760,7 +766,10 @@ a { color: var(--accent); }
   .form-row { grid-template-columns: 1fr; }
   .device-card,
   .device-card:nth-child(2),
-  .device-card:nth-child(3) { transform: none; }
+  .device-card:nth-child(3) {
+    animation: none;
+    transform: none;
+  }
   .footer { flex-direction: column; }
 }
 
@@ -819,9 +828,14 @@ a { color: var(--accent); }
 
   .section:nth-of-type(2) { animation-delay: 0.08s; }
   .section:nth-of-type(3) { animation-delay: 0.16s; }
-  .device-card { animation: drift-payforge 6s ease-in-out infinite alternate; }
-  .device-card:nth-child(2) { animation-name: drift-forgeshift; animation-delay: 0.7s; }
-  .device-card:nth-child(3) { animation-name: drift-forgetrack; animation-delay: 1.2s; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .device-card,
+  .device-card:nth-child(2),
+  .device-card:nth-child(3) {
+    animation: none;
+  }
 }
 
 @keyframes float-in {
