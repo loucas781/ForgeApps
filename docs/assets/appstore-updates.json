@@ -1,7 +1,7 @@
 {
   "source": "itunes-lookup",
   "country": "gb",
-  "generatedAt": "2026-05-25T04:53:38.663Z",
+  "generatedAt": "2026-05-25T10:50:30.931Z",
   "apps": {
     "payforge": {
       "key": "payforge",
@@ -12,7 +12,7 @@
       "releaseDate": "2026-05-21T19:18:41.000Z",
       "notes": null,
       "appStoreUrl": "https://apps.apple.com/gb/app/payforge/id6766063577?uo=4",
-      "previousVersion": null,
+      "previousVersion": "1.0.0",
       "hasUpdate": false
     },
     "forgeshift": {
@@ -24,7 +24,7 @@
       "releaseDate": "2026-05-19T16:07:12.000Z",
       "notes": "• Added in .ics exports\n• Removed confirmation from \"Sign Out\" button\n• Added support for server-side \"maintenance\" which can be toggled by an admin on the web version\n• Fixed issues with 2FA not always remembering for 30 days when toggled\n• Added support for full on-device offline cache, remembering if a user is logged in even if the server connection is fully lost, rather than signing the user out \n• Overall app optimisation and stabilisation updates",
       "appStoreUrl": "https://apps.apple.com/gb/app/forgeshift/id6762021609?uo=4",
-      "previousVersion": null,
+      "previousVersion": "1.0.2",
       "hasUpdate": false
     },
     "forgetrack": {
