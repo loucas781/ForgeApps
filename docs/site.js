@@ -119,12 +119,96 @@ const formatReleaseDate = (isoDate) => {
   }).format(parsed);
 };
 
+const releaseIdentity = (release) => release?.version || '';
+
+const currentReleaseFromApp = (appData) => {
+  if (!appData?.version) return null;
+  return {
+    version: appData.version,
+    releaseDate: appData.releaseDate || null,
+    notes: appData.notes || null,
+    appStoreUrl: appData.appStoreUrl || null
+  };
+};
+
+const getPreviousUpdates = (appData) => {
+  if (Array.isArray(appData?.previousUpdates)) return appData.previousUpdates.filter((release) => release?.version);
+
+  const currentRelease = currentReleaseFromApp(appData);
+  const currentIdentity = releaseIdentity(currentRelease);
+  return (Array.isArray(appData?.releaseHistory) ? appData.releaseHistory : [])
+    .filter((release) => release?.version && releaseIdentity(release) !== currentIdentity);
+};
+
+const appendText = (parent, tagName, className, text) => {
+  const child = document.createElement(tagName);
+  if (className) child.className = className;
+  child.textContent = text;
+  parent.appendChild(child);
+  return child;
+};
+
+const renderUpdateHistory = (element, appData) => {
+  const history = element.querySelector('[data-update-history]');
+  if (!history) return;
+
+  history.replaceChildren();
+
+  if (!appData || appData.status === 'missing_app_id' || !appData.version) {
+    history.hidden = true;
+    return;
+  }
+
+  history.hidden = false;
+
+  const details = document.createElement('details');
+  details.className = 'update-history';
+
+  const previousUpdates = getPreviousUpdates(appData);
+  const summaryText = previousUpdates.length === 1
+    ? 'Previous update'
+    : `Previous updates${previousUpdates.length > 0 ? ` (${previousUpdates.length})` : ''}`;
+  appendText(details, 'summary', null, summaryText);
+
+  const list = document.createElement('div');
+  list.className = 'update-history-list';
+
+  if (previousUpdates.length === 0) {
+    appendText(list, 'p', 'update-history-empty', 'No earlier App Store updates were found for this app yet.');
+  } else {
+    previousUpdates.forEach((release) => {
+      const item = document.createElement('article');
+      item.className = 'update-history-item';
+
+      const heading = appendText(item, 'h3', null, `Version ${release.version}`);
+      if (release.appStoreUrl) {
+        const releaseLink = document.createElement('a');
+        releaseLink.href = release.appStoreUrl;
+        releaseLink.target = '_blank';
+        releaseLink.rel = 'noopener noreferrer';
+        releaseLink.textContent = heading.textContent;
+        heading.replaceChildren(releaseLink);
+      }
+
+      const formattedDate = formatReleaseDate(release.releaseDate);
+      if (formattedDate) appendText(item, 'p', 'update-history-date', formattedDate);
+      appendText(item, 'p', 'update-history-notes', release.notes || 'No release notes were provided for this version.');
+
+      list.appendChild(item);
+    });
+  }
+
+  details.appendChild(list);
+  history.appendChild(details);
+};
+
 const renderUpdateCard = (element, appData) => {
   const title = element.querySelector('[data-update-title]');
   const version = element.querySelector('[data-update-version]');
   const date = element.querySelector('[data-update-date]');
   const notes = element.querySelector('[data-update-notes]');
   const link = element.querySelector('[data-update-link]');
+  renderUpdateHistory(element, appData);
 
   if (!appData || appData.status === 'missing_app_id') {
     if (title) title.textContent = 'App Store feed pending';
@@ -177,11 +261,16 @@ const loadAppStoreUpdates = async () => {
       const date = card.querySelector('[data-update-date]');
       const notes = card.querySelector('[data-update-notes]');
       const link = card.querySelector('[data-update-link]');
+      const history = card.querySelector('[data-update-history]');
 
       if (title) title.textContent = 'Unable to load updates';
       if (version) version.textContent = 'The App Store feed is temporarily unavailable.';
       if (date) date.textContent = '';
       if (notes) notes.textContent = 'Please try refreshing this page in a moment.';
+      if (history) {
+        history.replaceChildren();
+        history.hidden = true;
+      }
       if (link) link.hidden = true;
     });
   }

@@ -1,5 +1,6 @@
 {
   "source": "itunes-lookup",
+  "historySource": "app-store-web-version-history",
   "country": "gb",
   "generatedAt": "2026-05-29T10:15:03.830Z",
   "apps": {
@@ -13,7 +14,29 @@
       "notes": "• Added support for iCloud*\nDisabled by default and can be toggled on manually in the settings of the app under \"Sync & Data\"\n• Added in Premium Extra Tag \n• Added in Required Tag for parts of the onboarding process which are required to progress\n• Added in Salary Sacrifice Pension Quick Calculator \n• Added in subtle animations on the onboarding Screen\n• Added in advanced UK tax options & an NHS worker mode\n• Modified the onboarding layout for how the \"Set up properly\" appears \n• Updated Application Loading Screen\n• Updated the Student Loan layout to check boxes rather than a drop down menu\n• Updated the layout of the Quick Calculations page\n• Updated UI on the Work Tab\n• Resolved onboarding \"Continue\" and \"Back\" buttons jumping when pressed\n• Resolved some selection boxes not appearing in the correct UI style in settings\n• Resolved an issue where the pay breakdown graph colours would display incorrectly\n• Resolved some incorrect button redirects in app when pressing specific buttons \n• Application now syncs subscription expiry in real time\n• Optimised the application to reduce heating of devices",
       "appStoreUrl": "https://apps.apple.com/gb/app/payforge/id6766063577?uo=4",
       "previousVersion": "1.0.1",
-      "hasUpdate": false
+      "hasUpdate": false,
+      "releaseHistory": [
+        {
+          "version": "1.0.1",
+          "releaseDate": "2026-05-27T16:07:40.000Z",
+          "notes": "• Added support for iCloud*\nDisabled by default and can be toggled on manually in the settings of the app under \"Sync & Data\"\n• Added in Premium Extra Tag \n• Added in Required Tag for parts of the onboarding process which are required to progress\n• Added in Salary Sacrifice Pension Quick Calculator \n• Added in subtle animations on the onboarding Screen\n• Added in advanced UK tax options & an NHS worker mode\n• Modified the onboarding layout for how the \"Set up properly\" appears \n• Updated Application Loading Screen\n• Updated the Student Loan layout to check boxes rather than a drop down menu\n• Updated the layout of the Quick Calculations page\n• Updated UI on the Work Tab\n• Resolved onboarding \"Continue\" and \"Back\" buttons jumping when pressed\n• Resolved some selection boxes not appearing in the correct UI style in settings\n• Resolved an issue where the pay breakdown graph colours would display incorrectly\n• Resolved some incorrect button redirects in app when pressing specific buttons \n• Application now syncs subscription expiry in real time\n• Optimised the application to reduce heating of devices",
+          "appStoreUrl": "https://apps.apple.com/gb/app/payforge/id6766063577?uo=4"
+        },
+        {
+          "version": "1.0.0",
+          "releaseDate": "2026-05-21T00:00:00.000Z",
+          "notes": "• Added support for iCloud*\nDisabled by default and can be toggled on manually in the settings of the app under \"Sync & Data\"\n• Added in Premium Extra Tag \n• Added in Required Tag for parts of the onboarding process which are required to progress\n• Added in Salary Sacrifice Pension Quick Calculator \n• Added in subtle animations on the onboarding Screen\n• Added in advanced UK tax options & an NHS worker mode\n• Modified the onboarding layout for how the \"Set up properly\" appears \n• Updated Application Loading Screen\n• Updated the Student Loan layout to check boxes rather than a drop down menu\n• Updated the layout of the Quick Calculations page\n• Updated UI on the Work Tab\n• Resolved onboarding \"Continue\" and \"Back\" buttons jumping when pressed\n• Resolved some selection boxes not appearing in the correct UI style in settings\n• Resolved an issue where the pay breakdown graph colours would display incorrectly\n• Resolved some incorrect button redirects in app when pressing specific buttons \n• Application now syncs subscription expiry in real time\n• Optimised the application to reduce heating of devices",
+          "appStoreUrl": "https://apps.apple.com/gb/app/payforge/id6766063577?uo=4"
+        }
+      ],
+      "previousUpdates": [
+        {
+          "version": "1.0.0",
+          "releaseDate": "2026-05-21T00:00:00.000Z",
+          "notes": "• Added support for iCloud*\nDisabled by default and can be toggled on manually in the settings of the app under \"Sync & Data\"\n• Added in Premium Extra Tag \n• Added in Required Tag for parts of the onboarding process which are required to progress\n• Added in Salary Sacrifice Pension Quick Calculator \n• Added in subtle animations on the onboarding Screen\n• Added in advanced UK tax options & an NHS worker mode\n• Modified the onboarding layout for how the \"Set up properly\" appears \n• Updated Application Loading Screen\n• Updated the Student Loan layout to check boxes rather than a drop down menu\n• Updated the layout of the Quick Calculations page\n• Updated UI on the Work Tab\n• Resolved onboarding \"Continue\" and \"Back\" buttons jumping when pressed\n• Resolved some selection boxes not appearing in the correct UI style in settings\n• Resolved an issue where the pay breakdown graph colours would display incorrectly\n• Resolved some incorrect button redirects in app when pressing specific buttons \n• Application now syncs subscription expiry in real time\n• Optimised the application to reduce heating of devices",
+          "appStoreUrl": "https://apps.apple.com/gb/app/payforge/id6766063577?uo=4"
+        }
+      ]
     },
     "forgeshift": {
       "key": "forgeshift",
@@ -25,7 +48,41 @@
       "notes": "• Added in .ics exports\n• Removed confirmation from \"Sign Out\" button\n• Added support for server-side \"maintenance\" which can be toggled by an admin on the web version\n• Fixed issues with 2FA not always remembering for 30 days when toggled\n• Added support for full on-device offline cache, remembering if a user is logged in even if the server connection is fully lost, rather than signing the user out \n• Overall app optimisation and stabilisation updates",
       "appStoreUrl": "https://apps.apple.com/gb/app/forgeshift/id6762021609?uo=4",
       "previousVersion": "1.0.2",
-      "hasUpdate": false
+      "hasUpdate": false,
+      "releaseHistory": [
+        {
+          "version": "1.0.2",
+          "releaseDate": "2026-05-19T16:07:12.000Z",
+          "notes": "• Added in .ics exports\n• Removed confirmation from \"Sign Out\" button\n• Added support for server-side \"maintenance\" which can be toggled by an admin on the web version\n• Fixed issues with 2FA not always remembering for 30 days when toggled\n• Added support for full on-device offline cache, remembering if a user is logged in even if the server connection is fully lost, rather than signing the user out \n• Overall app optimisation and stabilisation updates",
+          "appStoreUrl": "https://apps.apple.com/gb/app/forgeshift/id6762021609?uo=4"
+        },
+        {
+          "version": "1.0.1",
+          "releaseDate": "2026-05-01T00:00:00.000Z",
+          "notes": "• Added in the Tip Jar",
+          "appStoreUrl": "https://apps.apple.com/gb/app/forgeshift/id6762021609?uo=4"
+        },
+        {
+          "version": "1.0.0",
+          "releaseDate": "2026-05-01T00:00:00.000Z",
+          "notes": "• Added in .ics exports\n• Removed confirmation from \"Sign Out\" button\n• Added support for server-side \"maintenance\" which can be toggled by an admin on the web version\n• Fixed issues with 2FA not always remembering for 30 days when toggled\n• Added support for full on-device offline cache, remembering if a user is logged in even if the server connection is fully lost, rather than signing the user out \n• Overall app optimisation and stabilisation updates",
+          "appStoreUrl": "https://apps.apple.com/gb/app/forgeshift/id6762021609?uo=4"
+        }
+      ],
+      "previousUpdates": [
+        {
+          "version": "1.0.1",
+          "releaseDate": "2026-05-01T00:00:00.000Z",
+          "notes": "• Added in the Tip Jar",
+          "appStoreUrl": "https://apps.apple.com/gb/app/forgeshift/id6762021609?uo=4"
+        },
+        {
+          "version": "1.0.0",
+          "releaseDate": "2026-05-01T00:00:00.000Z",
+          "notes": "• Added in .ics exports\n• Removed confirmation from \"Sign Out\" button\n• Added support for server-side \"maintenance\" which can be toggled by an admin on the web version\n• Fixed issues with 2FA not always remembering for 30 days when toggled\n• Added support for full on-device offline cache, remembering if a user is logged in even if the server connection is fully lost, rather than signing the user out \n• Overall app optimisation and stabilisation updates",
+          "appStoreUrl": "https://apps.apple.com/gb/app/forgeshift/id6762021609?uo=4"
+        }
+      ]
     },
     "forgetrack": {
       "key": "forgetrack",
@@ -37,7 +94,9 @@
       "notes": null,
       "appStoreUrl": null,
       "previousVersion": null,
-      "hasUpdate": false
+      "hasUpdate": false,
+      "releaseHistory": [],
+      "previousUpdates": []
     }
   }
 }
