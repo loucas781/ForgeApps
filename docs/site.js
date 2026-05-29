@@ -140,6 +140,54 @@ const getPreviousUpdates = (appData) => {
     .filter((release) => release?.version && releaseIdentity(release) !== currentIdentity);
 };
 
+
+const sortReleasesNewestFirst = (a, b) => {
+  const aTime = a?.releaseDate ? new Date(a.releaseDate).getTime() : 0;
+  const bTime = b?.releaseDate ? new Date(b.releaseDate).getTime() : 0;
+
+  if (Number.isNaN(aTime) && Number.isNaN(bTime)) return 0;
+  if (Number.isNaN(aTime)) return 1;
+  if (Number.isNaN(bTime)) return -1;
+  return bTime - aTime;
+};
+
+const releaseSnapshotFromApp = (appData) => {
+  if (!appData?.version) return null;
+  return {
+    version: appData.version,
+    releaseDate: appData.releaseDate || null,
+    notes: appData.notes || null,
+    appStoreUrl: appData.appStoreUrl || null
+  };
+};
+
+const mergeAppReleaseHistory = (appData, backfilledReleaseHistory = []) => {
+  if (!appData) return appData;
+
+  const releases = [];
+  const addRelease = (release) => {
+    if (!release?.version || releases.some((existing) => releaseIdentity(existing) === releaseIdentity(release))) return;
+    releases.push({
+      version: release.version,
+      releaseDate: release.releaseDate || null,
+      notes: release.notes || null,
+      appStoreUrl: release.appStoreUrl || appData.appStoreUrl || null
+    });
+  };
+
+  addRelease(releaseSnapshotFromApp(appData));
+  (Array.isArray(appData.releaseHistory) ? appData.releaseHistory : []).forEach(addRelease);
+  (Array.isArray(backfilledReleaseHistory) ? backfilledReleaseHistory : []).forEach(addRelease);
+
+  releases.sort(sortReleasesNewestFirst);
+
+  return {
+    ...appData,
+    releaseHistory: releases,
+    previousUpdates: releases.slice(1)
+  };
+};
+
 const appendText = (parent, tagName, className, text) => {
   const child = document.createElement(tagName);
   if (className) child.className = className;
@@ -248,11 +296,15 @@ const loadAppStoreUpdates = async () => {
     const response = await fetch('./assets/appstore-updates.json', { cache: 'no-store' });
     if (!response.ok) throw new Error(`Failed to load app updates: ${response.status}`);
     const payload = await response.json();
+    const historyPayload = await fetch('./assets/appstore-release-history.json', { cache: 'no-store' })
+      .then((historyResponse) => historyResponse.ok ? historyResponse.json() : null)
+      .catch(() => null);
 
     appUpdateCards.forEach((card) => {
       const appKey = card.dataset.appUpdates;
       const appData = payload?.apps?.[appKey] || null;
-      renderUpdateCard(card, appData);
+      const backfilledReleaseHistory = historyPayload?.apps?.[appKey] || [];
+      renderUpdateCard(card, mergeAppReleaseHistory(appData, backfilledReleaseHistory));
     });
   } catch (error) {
     appUpdateCards.forEach((card) => {

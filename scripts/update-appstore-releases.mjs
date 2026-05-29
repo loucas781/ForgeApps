@@ -2,6 +2,7 @@ import { readFile, writeFile } from 'node:fs/promises';
 
 const COUNTRY = process.env.APP_STORE_COUNTRY || 'gb';
 const OUTPUT_PATH = 'docs/assets/appstore-updates.json';
+const HISTORY_BACKFILL_PATH = 'docs/assets/appstore-release-history.json';
 const HISTORY_PLATFORMS = ['ios', 'iphone', 'ipad'];
 
 const APPS = [
@@ -208,6 +209,8 @@ const fetchAppData = async (app) => {
 const run = async () => {
   const priorRaw = await readFile(OUTPUT_PATH, 'utf8').catch(() => null);
   const prior = priorRaw ? JSON.parse(priorRaw) : null;
+  const historyBackfillRaw = await readFile(HISTORY_BACKFILL_PATH, 'utf8').catch(() => null);
+  const historyBackfill = historyBackfillRaw ? JSON.parse(historyBackfillRaw) : null;
 
   const latestApps = [];
   for (const app of APPS) {
@@ -227,9 +230,16 @@ const run = async () => {
       }
     }
 
+    const backfilledReleaseHistory = Array.isArray(historyBackfill?.apps?.[app.key])
+      ? historyBackfill.apps[app.key]
+      : [];
+
     latest.previousVersion = priorVersion;
     latest.hasUpdate = Boolean(latest.version && priorVersion && latest.version !== priorVersion);
-    latest.releaseHistory = mergeReleaseHistory(latest, priorApp, storeReleaseHistory);
+    latest.releaseHistory = mergeReleaseHistory(latest, priorApp, [
+      ...storeReleaseHistory,
+      ...backfilledReleaseHistory
+    ]);
     latest.previousUpdates = latest.releaseHistory.slice(1);
     latestApps.push(latest);
   }
