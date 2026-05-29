@@ -31,6 +31,53 @@ const toIsoDate = (value) => {
   return date.toISOString();
 };
 
+const releaseIdentity = (release) => {
+  if (!release?.version) return null;
+  return [release.version, release.releaseDate || ''].join('|');
+};
+
+const toReleaseSnapshot = (appData) => {
+  if (!appData?.version) return null;
+
+  return {
+    version: appData.version,
+    releaseDate: appData.releaseDate || null,
+    notes: appData.notes || null,
+    appStoreUrl: appData.appStoreUrl || null
+  };
+};
+
+const sortReleasesNewestFirst = (a, b) => {
+  const aTime = a.releaseDate ? new Date(a.releaseDate).getTime() : 0;
+  const bTime = b.releaseDate ? new Date(b.releaseDate).getTime() : 0;
+
+  if (Number.isNaN(aTime) && Number.isNaN(bTime)) return 0;
+  if (Number.isNaN(aTime)) return 1;
+  if (Number.isNaN(bTime)) return -1;
+  return bTime - aTime;
+};
+
+const mergeReleaseHistory = (latest, priorApp) => {
+  const releases = [];
+  const addRelease = (release) => {
+    const snapshot = toReleaseSnapshot(release);
+    const identity = releaseIdentity(snapshot);
+    if (!identity || releases.some((existing) => releaseIdentity(existing) === identity)) return;
+    releases.push(snapshot);
+  };
+
+  addRelease(latest);
+
+  if (Array.isArray(priorApp?.releaseHistory)) {
+    priorApp.releaseHistory.forEach(addRelease);
+  }
+
+  addRelease(priorApp);
+
+  releases.sort(sortReleasesNewestFirst);
+  return releases;
+};
+
 const fetchAppData = async (app) => {
   if (!app.appId) {
     return {
@@ -89,9 +136,12 @@ const run = async () => {
   const latestApps = [];
   for (const app of APPS) {
     const latest = await fetchAppData(app);
-    const priorVersion = prior?.apps?.[app.key]?.version || null;
+    const priorApp = prior?.apps?.[app.key] || null;
+    const priorVersion = priorApp?.version || null;
     latest.previousVersion = priorVersion;
     latest.hasUpdate = Boolean(latest.version && priorVersion && latest.version !== priorVersion);
+    latest.releaseHistory = mergeReleaseHistory(latest, priorApp);
+    latest.previousUpdates = latest.releaseHistory.slice(1);
     latestApps.push(latest);
   }
 
