@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Developer CRM | Forge Apps</title>
+  <meta name="description" content="Developer login and notification CRM for Forge Apps remote push operations." />
+  <script>
+    (function () {
+      try {
+        var theme = localStorage.getItem('forge-theme') || 'system';
+        if (theme !== 'system') document.documentElement.dataset.theme = theme;
+      } catch (error) {}
+    })();
+  </script>
+  <link rel="stylesheet" href="./styles.css?v=20260525-12" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="site-shell">
+    <nav class="navbar glass" aria-label="Main navigation">
+      <a class="brand" href="./" aria-label="Forge Apps home"><span class="brand-mark">F</span><span>Forge Apps</span></a>
+      <div class="nav-actions">
+        <div class="nav-links">
+          <a href="./">Home</a>
+          <a href="./payforge.html">PayForge</a>
+          <a href="./forgeshift.html">ForgeShift</a>
+          <a href="./forgetrack.html">ForgeTrack</a>
+          <a href="./contact.html">Contact</a>
+          <a href="./developer.html" aria-current="page">Developer</a>
+        </div>
+        <div class="theme-switcher" role="group" aria-label="Theme preference">
+          <button type="button" data-theme-choice="system" aria-pressed="true" aria-label="Use system theme"><span aria-hidden="true">S</span><span class="sr-only">System</span></button>
+          <button type="button" data-theme-choice="light" aria-pressed="false" aria-label="Use light theme"><span aria-hidden="true">L</span><span class="sr-only">Light</span></button>
+          <button type="button" data-theme-choice="dark" aria-pressed="false" aria-label="Use dark theme"><span aria-hidden="true">D</span><span class="sr-only">Dark</span></button>
+        </div>
+      </div>
+    </nav>
+
+    <main id="main">
+      <header class="hero compact glass">
+        <p class="eyebrow">Forge Apps CRM</p>
+        <h1>Developer push console</h1>
+        <p class="subtitle">Sign in with your developer account, then send targeted push notifications to a specific user ID through a secure cookie session.</p>
+      </header>
+
+      <section class="section glass split developer-grid">
+        <form class="contact-form" data-dev-login-form>
+          <p class="eyebrow">Developer login</p>
+          <h2>Authenticate</h2>
+          <label>API base URL<input name="baseUrl" required autocomplete="url" placeholder="https://forgeapps.co.uk" /></label>
+          <div class="form-row">
+            <label>Email<input name="email" required type="email" autocomplete="email" placeholder="dev@forgeapps.co.uk" /></label>
+            <label>Password<input name="password" required type="password" autocomplete="current-password" placeholder="••••••••" /></label>
+          </div>
+          <button class="btn primary" type="submit">Sign In</button>
+          <p class="form-note">This page is designed for HttpOnly cookie auth. It does not store bearer tokens in browser storage.</p>
+          <p class="form-note" data-dev-auth-state>Not signed in.</p>
+        </form>
+
+        <form class="contact-form" data-dev-send-form>
+          <p class="eyebrow">Push delivery</p>
+          <h2>Send notification</h2>
+          <div class="form-row">
+            <label>User ID<input name="userId" required placeholder="user_123" /></label>
+            <label>Title<input name="title" required placeholder="Payday update" /></label>
+          </div>
+          <label>Body<textarea name="body" required placeholder="Your payout has been processed."></textarea></label>
+          <button class="btn" type="submit">Send Push</button>
+          <p class="form-note" data-dev-send-state>Waiting for login.</p>
+        </form>
+      </section>
+
+      <section class="section glass">
+        <div class="section-header">
+          <div>
+            <p class="eyebrow">Session</p>
+            <h2>Current developer session</h2>
+          </div>
+        </div>
+        <div class="tile">
+          <p data-dev-session-summary>No active session.</p>
+          <p class="form-note">Expected backend routes: <code>/api/developer/session/login</code>, <code>/api/developer/session/push/send</code>, and <code>/api/developer/session/logout</code>.</p>
+          <button class="btn" type="button" data-dev-logout>Sign Out</button>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <span>&copy; 2026 Forge Apps</span>
+      <span><a href="./privacy.html">Privacy</a> &middot; <a href="./terms.html">Terms</a> &middot; <a href="./contact.html">Contact</a></span>
+    </footer>
+  </div>
+  <script src="./site.js?v=20260529-1"></script>
+  <script src="./developer.js?v=20260601-1"></script>
+</body>
+</html>

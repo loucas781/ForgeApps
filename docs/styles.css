@@ -802,6 +802,18 @@ textarea:focus {
   font-size: 0.95rem;
 }
 
+.status-ok {
+  color: var(--accent-2);
+}
+
+.status-error {
+  color: #e45555;
+}
+
+.developer-grid {
+  align-items: start;
+}
+
 .footer {
   display: flex;
   justify-content: space-between;
