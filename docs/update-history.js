@@ -1,3 +1,4 @@
+(() => {
 const updateHistoryCards = document.querySelectorAll('[data-app-updates]');
 
 const formatHistoryReleaseDate = (isoDate) => {
@@ -149,3 +150,4 @@ const loadUpdateHistory = async () => {
 };
 
 loadUpdateHistory();
+})();
