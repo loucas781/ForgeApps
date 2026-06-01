@@ -23,7 +23,9 @@ jobs:
       - name: Refresh App Store metadata
         env:
           APP_STORE_COUNTRY: gb
-        run: node ./scripts/update-appstore-releases.mjs
+        run: |
+          node ./scripts/update-appstore-releases.mjs
+          node ./scripts/update-appstore-release-history.mjs
 
       - name: Commit changes
         run: |
@@ -34,6 +36,6 @@ jobs:
 
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add docs/assets/appstore-updates.json
+          git add docs/assets/appstore-updates.json docs/assets/appstore-release-history.json
           git commit -m "chore: sync App Store release notes"
           git push
