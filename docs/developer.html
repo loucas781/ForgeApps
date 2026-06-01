@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Developer CRM | Forge Apps</title>
   <meta name="description" content="Developer login and notification CRM for Forge Apps remote push operations." />
+  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet" />
   <script>
     (function () {
       try {
@@ -27,7 +28,6 @@
           <a href="./forgeshift.html">ForgeShift</a>
           <a href="./forgetrack.html">ForgeTrack</a>
           <a href="./contact.html">Contact</a>
-          <a href="./developer.html" aria-current="page">Developer</a>
         </div>
         <div class="theme-switcher" role="group" aria-label="Theme preference">
           <button type="button" data-theme-choice="system" aria-pressed="true" aria-label="Use system theme"><span aria-hidden="true">S</span><span class="sr-only">System</span></button>
@@ -82,6 +82,44 @@
           <p data-dev-session-summary>No active session.</p>
           <p class="form-note">Expected backend routes: <code>/api/developer/session/login</code>, <code>/api/developer/session/push/send</code>, and <code>/api/developer/session/logout</code>.</p>
           <button class="btn" type="button" data-dev-logout>Sign Out</button>
+        </div>
+      </section>
+
+      <section class="section glass">
+        <div class="section-header">
+          <div>
+            <p class="eyebrow">API reference</p>
+            <h2>How to connect the CRM to your backend</h2>
+          </div>
+        </div>
+        <div class="tile api-docs">
+          <p><strong>Base URL</strong>: Enter your backend origin only, for example <code>https://forgeapps.co.uk</code>. Do not add a trailing slash.</p>
+          <p><strong>Authentication model</strong>: login should set an HttpOnly session cookie; all subsequent requests are sent with <code>credentials: include</code>.</p>
+
+          <h3>1) Login</h3>
+          <p><code>POST /api/developer/session/login</code></p>
+<pre><code>{
+  "email": "dev@forgeapps.co.uk",
+  "password": "your-password"
+}</code></pre>
+          <p>Expected result: <code>200</code> with a developer object and a valid session cookie.</p>
+
+          <h3>2) Send push</h3>
+          <p><code>POST /api/developer/session/push/send</code></p>
+<pre><code>{
+  "userID": "user_123",
+  "title": "Payday update",
+  "body": "Your payout has been processed."
+}</code></pre>
+          <p>Expected result: <code>200</code>/<code>202</code> when queued successfully.</p>
+
+          <h3>3) Logout</h3>
+          <p><code>POST /api/developer/session/logout</code></p>
+<pre><code>{}</code></pre>
+
+          <h3>Troubleshooting</h3>
+          <p>If login/send fails from browser but works in server tools, verify CORS allows your website origin and also allows credentials.</p>
+          <p>Required CORS headers usually include <code>Access-Control-Allow-Origin</code> (exact origin, not <code>*</code>) and <code>Access-Control-Allow-Credentials: true</code>.</p>
         </div>
       </section>
     </main>
