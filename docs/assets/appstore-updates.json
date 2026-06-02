@@ -1,7 +1,7 @@
 {
   "source": "itunes-lookup",
   "country": "gb",
-  "generatedAt": "2026-06-02T16:56:38.422Z",
+  "generatedAt": "2026-06-02T21:25:09.464Z",
   "apps": {
     "payforge": {
       "key": "payforge",
@@ -12,8 +12,8 @@
       "releaseDate": "2026-06-01T23:36:03.000Z",
       "notes": "• Added Premium Access Audit in Settings with clear entitlement status, active plan, and reset history\n• Improved premium expiry handling so premium-only settings safely reset when access ends\n• Refined iCloud Sync & Data with clearer sync state, health checks, and event logging\n• Added clearer sync guidance for cross-device behaviour and iCloud requirements\n• Added notifications options in the settings section for on device payday reminders\n• Updated payday reminders to follow each profile’s next calculated payday more reliably\n• Fixed Next Payday progression issues that could show incorrect negative countdowns\n• Improved Check Pay premium gating for a more consistent locked/unlocked experience\n• Added attachment management in Check Pay, including preview and delete support\n• Added inline PDF viewing for payslip attachments so it is no longer a placeholder \n• Optimised the application for a better experience",
       "appStoreUrl": "https://apps.apple.com/gb/app/payforge/id6766063577?uo=4",
-      "previousVersion": "1.0.1",
-      "hasUpdate": true,
+      "previousVersion": "1.0.2",
+      "hasUpdate": false,
       "releaseHistory": [
         {
           "version": "1.0.2",
