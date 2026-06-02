@@ -1,18 +1,18 @@
 {
   "source": "itunes-lookup",
   "country": "gb",
-  "generatedAt": "2026-06-02T10:56:01.138Z",
+  "generatedAt": "2026-06-02T16:56:38.422Z",
   "apps": {
     "payforge": {
       "key": "payforge",
       "name": "PayForge",
       "appId": "6766063577",
       "status": "ok",
-      "version": "1.0.1",
-      "releaseDate": "2026-05-27T16:07:40.000Z",
-      "notes": "• Added support for iCloud*\nDisabled by default and can be toggled on manually in the settings of the app under \"Sync & Data\"\n• Added in Premium Extra Tag \n• Added in Required Tag for parts of the onboarding process which are required to progress\n• Added in Salary Sacrifice Pension Quick Calculator \n• Added in subtle animations on the onboarding Screen\n• Added in advanced UK tax options & an NHS worker mode\n• Modified the onboarding layout for how the \"Set up properly\" appears \n• Updated Application Loading Screen\n• Updated the Student Loan layout to check boxes rather than a drop down menu\n• Updated the layout of the Quick Calculations page\n• Updated UI on the Work Tab\n• Resolved onboarding \"Continue\" and \"Back\" buttons jumping when pressed\n• Resolved some selection boxes not appearing in the correct UI style in settings\n• Resolved an issue where the pay breakdown graph colours would display incorrectly\n• Resolved some incorrect button redirects in app when pressing specific buttons \n• Application now syncs subscription expiry in real time\n• Optimised the application to reduce heating of devices",
+      "version": "1.0.2",
+      "releaseDate": "2026-06-01T23:36:03.000Z",
+      "notes": "• Added Premium Access Audit in Settings with clear entitlement status, active plan, and reset history\n• Improved premium expiry handling so premium-only settings safely reset when access ends\n• Refined iCloud Sync & Data with clearer sync state, health checks, and event logging\n• Added clearer sync guidance for cross-device behaviour and iCloud requirements\n• Added notifications options in the settings section for on device payday reminders\n• Updated payday reminders to follow each profile’s next calculated payday more reliably\n• Fixed Next Payday progression issues that could show incorrect negative countdowns\n• Improved Check Pay premium gating for a more consistent locked/unlocked experience\n• Added attachment management in Check Pay, including preview and delete support\n• Added inline PDF viewing for payslip attachments so it is no longer a placeholder \n• Optimised the application for a better experience",
       "appStoreUrl": "https://apps.apple.com/gb/app/payforge/id6766063577?uo=4",
-      "previousVersion": "1.0.2",
+      "previousVersion": "1.0.1",
       "hasUpdate": true,
       "releaseHistory": [
         {
