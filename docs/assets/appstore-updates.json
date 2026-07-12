@@ -71,6 +71,20 @@
       "hasUpdate": false,
       "releaseHistory": [],
       "previousUpdates": []
+    },
+    "watchcue": {
+      "key": "watchcue",
+      "name": "WatchCue",
+      "appId": null,
+      "status": "missing_app_id",
+      "version": null,
+      "releaseDate": null,
+      "notes": null,
+      "appStoreUrl": null,
+      "previousVersion": null,
+      "hasUpdate": false,
+      "releaseHistory": [],
+      "previousUpdates": []
     }
   }
 }

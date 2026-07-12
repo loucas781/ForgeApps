@@ -21,6 +21,12 @@ const APPS = [
     name: 'ForgeTrack',
     appId: null,
     fallbackStoreUrl: null
+  },
+  {
+    key: 'watchcue',
+    name: 'WatchCue',
+    appId: null,
+    fallbackStoreUrl: null
   }
 ];
 
