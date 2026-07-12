@@ -607,54 +607,20 @@ p { line-height: 1.65; }
   isolation: isolate;
 }
 
-.watchcue-mark {
+.watchcue-app-icon {
   position: relative;
-  display: grid;
-  place-items: center;
   width: 150px;
   aspect-ratio: 1;
   border: 1px solid var(--border-strong);
-  border-radius: 34%;
-  background:
-    radial-gradient(circle at 38% 28%, rgba(255,255,255,0.6), transparent 26%),
-    linear-gradient(145deg, var(--accent-3), var(--accent-2));
+  border-radius: 22.5%;
+  object-fit: contain;
   box-shadow: 0 28px 70px color-mix(in srgb, var(--accent-3) 26%, transparent), inset 0 1px 0 rgba(255,255,255,0.7);
   transform: rotate(-7deg);
   z-index: 1;
 }
 
-.watchcue-mark::before {
-  content: "";
-  width: 54%;
-  aspect-ratio: 1;
-  border: 8px solid rgba(255,255,255,0.94);
-  border-radius: 50%;
-  box-shadow: inset 0 0 0 1px rgba(4,20,34,0.16);
-}
-
-.watchcue-mark::after {
-  content: "";
-  position: absolute;
-  width: 7px;
-  height: 31px;
-  border-radius: 999px;
-  background: white;
-  transform: translate(8px, -8px) rotate(42deg);
-  transform-origin: 50% 25px;
-}
-
-.watchcue-mark span {
-  position: absolute;
-  width: 12px;
-  height: 12px;
-  border: 3px solid white;
-  border-radius: 50%;
-  background: var(--accent-3);
-  transform: translate(39px, -20px);
-}
-
-.watchcue-mark-large { width: clamp(132px, 18vw, 190px); }
-.watchcue-mark-hero { width: clamp(180px, 27vw, 290px); }
+.watchcue-app-icon-large { width: clamp(132px, 18vw, 190px); }
+.watchcue-app-icon-hero { width: clamp(180px, 27vw, 290px); }
 
 .watchcue-orbit {
   position: absolute;
