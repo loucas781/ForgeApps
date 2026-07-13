@@ -38,6 +38,13 @@ const toIsoDate = (value) => {
   return date.toISOString();
 };
 
+const isInitialReleaseVersion = (version) => /^1(?:\.0)+$/.test(String(version || '').trim());
+
+const releaseNotesFor = (version, notes) => {
+  if (isInitialReleaseVersion(version)) return 'Initial Release';
+  return notes || null;
+};
+
 const releaseIdentity = (release) => release?.version || null;
 
 const toReleaseSnapshot = (release, app) => {
@@ -47,7 +54,7 @@ const toReleaseSnapshot = (release, app) => {
   return {
     version,
     releaseDate: toIsoDate(release.releaseDate || release.releaseTimestamp || release.date),
-    notes: release.notes || release.releaseNotes || null,
+    notes: releaseNotesFor(version, release.notes || release.releaseNotes),
     appStoreUrl: release.appStoreUrl || app.fallbackStoreUrl || null
   };
 };
@@ -66,7 +73,10 @@ const mergeReleases = (existingReleases = [], fetchedReleases = []) => {
   const releases = [];
   const addRelease = (release) => {
     if (!release?.version || releases.some((existing) => releaseIdentity(existing) === releaseIdentity(release))) return;
-    releases.push(release);
+    releases.push({
+      ...release,
+      notes: releaseNotesFor(release.version, release.notes)
+    });
   };
 
   fetchedReleases.forEach(addRelease);

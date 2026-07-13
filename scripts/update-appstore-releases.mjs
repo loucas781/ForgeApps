@@ -37,6 +37,13 @@ const toIsoDate = (value) => {
   return date.toISOString();
 };
 
+const isInitialReleaseVersion = (version) => /^1(?:\.0)+$/.test(String(version || '').trim());
+
+const releaseNotesFor = (version, notes) => {
+  if (isInitialReleaseVersion(version)) return 'Initial Release';
+  return notes || null;
+};
+
 const releaseIdentity = (release) => {
   if (!release?.version) return null;
   return [release.version, release.releaseDate || ''].join('|');
@@ -48,7 +55,7 @@ const toReleaseSnapshot = (appData) => {
   return {
     version: appData.version,
     releaseDate: appData.releaseDate || null,
-    notes: appData.notes || null,
+    notes: releaseNotesFor(appData.version, appData.notes),
     appStoreUrl: appData.appStoreUrl || null
   };
 };
@@ -130,7 +137,7 @@ const fetchAppData = async (app) => {
     status: 'ok',
     version: first.version || null,
     releaseDate: toIsoDate(first.currentVersionReleaseDate),
-    notes: first.releaseNotes || null,
+    notes: releaseNotesFor(first.version, first.releaseNotes),
     appStoreUrl: first.trackViewUrl || app.fallbackStoreUrl
   };
 };

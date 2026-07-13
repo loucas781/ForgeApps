@@ -14,6 +14,13 @@ const formatHistoryReleaseDate = (isoDate) => {
 
 const releaseIdentity = (release) => release?.version || '';
 
+const isInitialReleaseVersion = (version) => /^1(?:\.0)+$/.test(String(version || '').trim());
+
+const releaseNotesFor = (version, notes) => {
+  if (isInitialReleaseVersion(version)) return 'Initial Release';
+  return notes || 'No release notes were provided for this version.';
+};
+
 const sortReleasesNewestFirst = (a, b) => {
   const aTime = a?.releaseDate ? new Date(a.releaseDate).getTime() : 0;
   const bTime = b?.releaseDate ? new Date(b.releaseDate).getTime() : 0;
@@ -111,7 +118,7 @@ const renderUpdateHistory = (element, appData, backfilledReleaseHistory = []) =>
 
       const formattedDate = formatHistoryReleaseDate(release.releaseDate);
       if (formattedDate) appendHistoryText(item, 'p', 'update-history-date', formattedDate);
-      appendHistoryText(item, 'p', 'update-history-notes', release.notes || 'No release notes were provided for this version.');
+      appendHistoryText(item, 'p', 'update-history-notes', releaseNotesFor(release.version, release.notes));
 
       list.appendChild(item);
     });

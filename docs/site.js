@@ -119,6 +119,13 @@ const formatReleaseDate = (isoDate) => {
   }).format(parsed);
 };
 
+const isInitialReleaseVersion = (version) => /^1(?:\.0)+$/.test(String(version || '').trim());
+
+const releaseNotesFor = (version, notes) => {
+  if (isInitialReleaseVersion(version)) return 'Initial Release';
+  return notes || 'No release notes were provided for this version.';
+};
+
 const releaseIdentity = (release) => {
   if (!release) return '';
   return [release.version || '', release.releaseDate || ''].join('|');
@@ -195,7 +202,7 @@ const renderUpdateHistory = (element, appData) => {
 
       const formattedDate = formatReleaseDate(release.releaseDate);
       if (formattedDate) appendText(item, 'p', 'update-history-date', formattedDate);
-      appendText(item, 'p', 'update-history-notes', release.notes || 'No release notes were provided for this version.');
+      appendText(item, 'p', 'update-history-notes', releaseNotesFor(release.version, release.notes));
 
       list.appendChild(item);
     });
@@ -246,7 +253,7 @@ const renderUpdateCard = (element, appData) => {
     ? `Updated from ${appData.previousVersion} to ${appData.version}.`
     : `Latest version currently listed on the App Store.`;
   if (date) date.textContent = formatReleaseDate(appData.releaseDate) || '';
-  if (notes) notes.textContent = appData.notes || 'No release notes were provided for this version.';
+  if (notes) notes.textContent = releaseNotesFor(appData.version, appData.notes);
   if (link && appData.appStoreUrl) {
     link.hidden = false;
     link.href = appData.appStoreUrl;
