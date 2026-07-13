@@ -221,15 +221,6 @@ const renderUpdateCard = (element, appData) => {
   renderUpdateHistory(element, appData);
 
   if (!appData || appData.status === 'missing_app_id') {
-    if (element.dataset.appComingSoon === 'true') {
-      if (title) title.textContent = 'Update history available after launch';
-      if (version) version.textContent = 'WatchCue is not yet published on the App Store.';
-      if (date) date.textContent = '';
-      if (notes) notes.textContent = 'Release notes and previous versions will appear here automatically once WatchCue launches.';
-      if (link) link.hidden = true;
-      return;
-    }
-
     if (title) title.textContent = 'App Store feed pending';
     if (version) version.textContent = 'No App Store ID configured yet for this app.';
     if (date) date.textContent = '';
@@ -239,10 +230,10 @@ const renderUpdateCard = (element, appData) => {
   }
 
   if (!appData.version) {
-    if (title) title.textContent = 'No published update data yet';
-    if (version) version.textContent = 'We could not find version details from the App Store feed.';
+    if (title) title.textContent = 'App Store release pending';
+    if (version) version.textContent = 'Version details will appear here when Apple makes the listing available.';
     if (date) date.textContent = '';
-    if (notes) notes.textContent = 'Check back soon after the next release.';
+    if (notes) notes.textContent = 'Release notes and previous versions are synced automatically from the App Store.';
     if (link) link.hidden = !appData.appStoreUrl;
     if (link && appData.appStoreUrl) link.href = appData.appStoreUrl;
     return;

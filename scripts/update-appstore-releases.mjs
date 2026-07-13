@@ -25,8 +25,8 @@ const APPS = [
   {
     key: 'watchcue',
     name: 'WatchCue',
-    appId: null,
-    fallbackStoreUrl: null
+    appId: '6790001201',
+    fallbackStoreUrl: 'https://apps.apple.com/us/app/watchcue/id6790001201'
   }
 ];
 
