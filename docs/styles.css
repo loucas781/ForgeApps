@@ -536,6 +536,12 @@ p { line-height: 1.65; }
   color: var(--muted);
 }
 
+.legal-copy h2 {
+  margin-top: 28px;
+  font-size: clamp(1.35rem, 2.6vw, 1.9rem);
+  letter-spacing: -0.025em;
+}
+
 .product-card {
   display: flex;
   flex-direction: column;
