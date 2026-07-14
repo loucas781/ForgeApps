@@ -1,7 +1,7 @@
 {
   "source": "itunes-lookup",
   "country": "gb",
-  "generatedAt": "2026-07-14T14:14:53.357Z",
+  "generatedAt": "2026-07-14T19:44:41.535Z",
   "apps": {
     "payforge": {
       "key": "payforge",
@@ -93,7 +93,7 @@
       "releaseDate": "2026-07-14T13:01:27.000Z",
       "notes": "Initial Release",
       "appStoreUrl": "https://apps.apple.com/gb/app/watchcue/id6790001201?uo=4",
-      "previousVersion": null,
+      "previousVersion": "1.0.0",
       "hasUpdate": false,
       "releaseHistory": [
         {
