@@ -1,7 +1,7 @@
 {
   "source": "itunes-lookup",
   "country": "gb",
-  "generatedAt": "2026-07-14T08:28:40.461Z",
+  "generatedAt": "2026-07-14T14:14:53.357Z",
   "apps": {
     "payforge": {
       "key": "payforge",
@@ -88,14 +88,21 @@
       "key": "watchcue",
       "name": "WatchCue",
       "appId": "6790001201",
-      "status": "not_found",
-      "version": null,
-      "releaseDate": null,
-      "notes": null,
-      "appStoreUrl": "https://apps.apple.com/us/app/watchcue/id6790001201",
+      "status": "ok",
+      "version": "1.0.0",
+      "releaseDate": "2026-07-14T13:01:27.000Z",
+      "notes": "Initial Release",
+      "appStoreUrl": "https://apps.apple.com/gb/app/watchcue/id6790001201?uo=4",
       "previousVersion": null,
       "hasUpdate": false,
-      "releaseHistory": [],
+      "releaseHistory": [
+        {
+          "version": "1.0.0",
+          "releaseDate": "2026-07-14T13:01:27.000Z",
+          "notes": "Initial Release",
+          "appStoreUrl": "https://apps.apple.com/gb/app/watchcue/id6790001201?uo=4"
+        }
+      ],
       "previousUpdates": []
     }
   }
