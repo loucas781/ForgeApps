@@ -1,7 +1,7 @@
 {
   "source": "itunes-lookup",
   "country": "gb",
-  "generatedAt": "2026-07-13T19:50:54.243Z",
+  "generatedAt": "2026-07-14T03:36:28.197Z",
   "apps": {
     "payforge": {
       "key": "payforge",
@@ -12,8 +12,8 @@
       "releaseDate": "2026-07-13T17:36:10.000Z",
       "notes": "• Added Benefit in Kind (BiK) tax support across relevant calculators and pay checks.\n• Added Salary Comparison to compare salaries, pay rises, and salary sacrifice scenarios.\n• Improved premium gating and reset behaviour when Premium expires.\n• Added iCloud sync across devices and iCloud backup and restore.\n• Improved Sync & Data status reporting and backup explanations.\n• Improved payday calculations, reminders, weekend, and bank holiday handling.\n• Improved notification management.\n• Optimised data processing and reduced unnecessary app work.\n• Fixed navigation, status messaging, and SwiftUI issues.\n• Improved layout and clarity throughout Settings and calculation screens.",
       "appStoreUrl": "https://apps.apple.com/gb/app/payforge/id6766063577?uo=4",
-      "previousVersion": "1.0.2",
-      "hasUpdate": true,
+      "previousVersion": "1.0.3",
+      "hasUpdate": false,
       "releaseHistory": [
         {
           "version": "1.0.3",
