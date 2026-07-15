@@ -1,7 +1,7 @@
 {
   "source": "itunes-lookup",
   "country": "gb",
-  "generatedAt": "2026-07-14T19:44:41.535Z",
+  "generatedAt": "2026-07-15T03:37:26.535Z",
   "apps": {
     "payforge": {
       "key": "payforge",
@@ -54,13 +54,19 @@
       "name": "ForgeShift",
       "appId": "6762021609",
       "status": "ok",
-      "version": "1.0.2",
-      "releaseDate": "2026-05-19T16:07:12.000Z",
-      "notes": "• Added in .ics exports\n• Removed confirmation from \"Sign Out\" button\n• Added support for server-side \"maintenance\" which can be toggled by an admin on the web version\n• Fixed issues with 2FA not always remembering for 30 days when toggled\n• Added support for full on-device offline cache, remembering if a user is logged in even if the server connection is fully lost, rather than signing the user out \n• Overall app optimisation and stabilisation updates",
+      "version": "1.0.3",
+      "releaseDate": "2026-07-14T17:09:40.000Z",
+      "notes": "• Reduced task-assignment prewarming from up to 10–12 API requests per batch to one range request.\n• Moved cache encoding and disk writes onto dedicated utility queues.\n• Added in-memory shift and task-assignment caches.\n• Made API configuration thread-safe and removed shared encoder/decoder concurrency risks.\n• Prevented stale requests from overwriting another user’s shifts or a newly selected calendar month.\n• Parallelised user, team, and team-member loading.\n• Prevented reminder scheduling from extending the visible shift-loading state.\n• Eliminated potentially hundreds of avatar verification requests after one upload.\n• Added a bounded 15-minute avatar cache to balance performance and freshness.\n• Calculated calendar month data once per render instead of rebuilding it for every day cell.\n• Precomputed upcoming-shift rows and section labels in one pass.\n• Replaced repeated date/time formatter work with lightweight arithmetic where appropriate.\n• Corrected the weekly summary so “Upcoming” only includes the current week.\n• Calendar and shift-detail screens now refresh only after an actual save.\n• Fixed calendar creation and template-created shifts not reliably appearing after saving.\n• Parallelised team-member requests while retaining partial successful results.\n• Fixed Watch and widget views showing an expired past shift as the “next” shift.\n• Reworked Watch calendar indexing from roughly days × shifts work to a single shift pass.\n• Prevented outdated queued Watch transfers from rolling back newer data.\n• Ensured appearance updates preserve the current Watch shift payload.\n• Avoided repeated widget storage writes and reloads when shift content has not changed.\n• Added idempotent Watch session startup and skipped redundant persistence updates.\n• Retained correct Gregorian server-date handling for devices using non-Gregorian calendars.\n• Removed unused models, state, methods, formatting helpers, and the obsolete share-sheet component.",
       "appStoreUrl": "https://apps.apple.com/gb/app/forgeshift/id6762021609?uo=4",
       "previousVersion": "1.0.2",
-      "hasUpdate": false,
+      "hasUpdate": true,
       "releaseHistory": [
+        {
+          "version": "1.0.3",
+          "releaseDate": "2026-07-14T17:09:40.000Z",
+          "notes": "• Reduced task-assignment prewarming from up to 10–12 API requests per batch to one range request.\n• Moved cache encoding and disk writes onto dedicated utility queues.\n• Added in-memory shift and task-assignment caches.\n• Made API configuration thread-safe and removed shared encoder/decoder concurrency risks.\n• Prevented stale requests from overwriting another user’s shifts or a newly selected calendar month.\n• Parallelised user, team, and team-member loading.\n• Prevented reminder scheduling from extending the visible shift-loading state.\n• Eliminated potentially hundreds of avatar verification requests after one upload.\n• Added a bounded 15-minute avatar cache to balance performance and freshness.\n• Calculated calendar month data once per render instead of rebuilding it for every day cell.\n• Precomputed upcoming-shift rows and section labels in one pass.\n• Replaced repeated date/time formatter work with lightweight arithmetic where appropriate.\n• Corrected the weekly summary so “Upcoming” only includes the current week.\n• Calendar and shift-detail screens now refresh only after an actual save.\n• Fixed calendar creation and template-created shifts not reliably appearing after saving.\n• Parallelised team-member requests while retaining partial successful results.\n• Fixed Watch and widget views showing an expired past shift as the “next” shift.\n• Reworked Watch calendar indexing from roughly days × shifts work to a single shift pass.\n• Prevented outdated queued Watch transfers from rolling back newer data.\n• Ensured appearance updates preserve the current Watch shift payload.\n• Avoided repeated widget storage writes and reloads when shift content has not changed.\n• Added idempotent Watch session startup and skipped redundant persistence updates.\n• Retained correct Gregorian server-date handling for devices using non-Gregorian calendars.\n• Removed unused models, state, methods, formatting helpers, and the obsolete share-sheet component.",
+          "appStoreUrl": "https://apps.apple.com/gb/app/forgeshift/id6762021609?uo=4"
+        },
         {
           "version": "1.0.2",
           "releaseDate": "2026-05-19T16:07:12.000Z",
@@ -68,7 +74,14 @@
           "appStoreUrl": "https://apps.apple.com/gb/app/forgeshift/id6762021609?uo=4"
         }
       ],
-      "previousUpdates": []
+      "previousUpdates": [
+        {
+          "version": "1.0.2",
+          "releaseDate": "2026-05-19T16:07:12.000Z",
+          "notes": "• Added in .ics exports\n• Removed confirmation from \"Sign Out\" button\n• Added support for server-side \"maintenance\" which can be toggled by an admin on the web version\n• Fixed issues with 2FA not always remembering for 30 days when toggled\n• Added support for full on-device offline cache, remembering if a user is logged in even if the server connection is fully lost, rather than signing the user out \n• Overall app optimisation and stabilisation updates",
+          "appStoreUrl": "https://apps.apple.com/gb/app/forgeshift/id6762021609?uo=4"
+        }
+      ]
     },
     "forgetrack": {
       "key": "forgetrack",
