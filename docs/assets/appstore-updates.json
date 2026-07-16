@@ -1,7 +1,7 @@
 {
   "source": "itunes-lookup",
   "country": "gb",
-  "generatedAt": "2026-07-16T03:39:24.402Z",
+  "generatedAt": "2026-07-16T08:35:20.814Z",
   "apps": {
     "payforge": {
       "key": "payforge",
@@ -58,8 +58,8 @@
       "releaseDate": "2026-07-15T05:14:54.000Z",
       "notes": "• Restored the Upcoming summary to include all future scheduled shifts.\n• Annual leave, days off and on-call duties are now included.\n• Completed hours remain focused on the current week.",
       "appStoreUrl": "https://apps.apple.com/gb/app/forgeshift/id6762021609?uo=4",
-      "previousVersion": "1.0.3",
-      "hasUpdate": true,
+      "previousVersion": "1.0.4",
+      "hasUpdate": false,
       "releaseHistory": [
         {
           "version": "1.0.4",
@@ -118,8 +118,8 @@
       "releaseDate": "2026-07-15T21:58:21.000Z",
       "notes": "• Redesigned series pages around seasons instead of displaying episodes immediately.\n• Added season cards showing watched episodes, total episodes, and progress.\n• Added quick watched/unwatched controls to every season.\n• Added dedicated season pages containing individual episode lists.\n• Moved season and whole-series bulk watch actions into the season area.\n• Next-episode suggestions now show every eligible series instead of stopping after five.\n• Next-episode suggestions are limited to shows marked as Watching.\n• Planning, On Hold, Dropped, Caught Up, and Completed shows are excluded from next-episode suggestions.\n• Added VoiceOver labels identifying the season affected by quick actions.\n• Added German, Spanish, and French translations for the new season interface.\n• Matched bottom spacing between series pages and Upcoming.\n• Standardised edge spacing across one-, two-, and three-column Profile layouts.\n• Fixed season pages briefly opening and immediately returning to series details.\n• Fixed episode details appearing briefly before returning to the season page.\n• Fixed Profile grid navigation reopening series details over season pages.\n• Fixed Profile grid cards displaying unwanted disclosure arrows.\n• Fixed Profile grid cards opening the last show instead of the selected show.\n• Fixed watched-state changes becoming stale after returning from episode details.\n• Fixed obsolete episode metadata affecting season totals and progress.\n• Fixed duplicate weekday identifiers for Tuesday/Thursday and Saturday/Sunday in the Upcoming calendar.\n• Reduced undefined SwiftUI grid behaviour and repeated layout updates that could contribute to interface lock-ups.\n• Unified series, season, and episode navigation under one value-based navigation path.\n• Made season pages query persisted episode information independently.\n• Preserved stable season-route identity while filtering against current episode IDs.\n• Removed obsolete captured bulk-action and navigation state.\n• Added coverage for next-episode eligibility and Remaining-count behaviour.",
       "appStoreUrl": "https://apps.apple.com/gb/app/watchcue/id6790001201?uo=4",
-      "previousVersion": "1.0.0",
-      "hasUpdate": true,
+      "previousVersion": "1.2.0",
+      "hasUpdate": false,
       "releaseHistory": [
         {
           "version": "1.2.0",
