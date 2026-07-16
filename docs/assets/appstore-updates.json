@@ -1,7 +1,7 @@
 {
   "source": "itunes-lookup",
   "country": "gb",
-  "generatedAt": "2026-07-15T19:37:35.386Z",
+  "generatedAt": "2026-07-16T03:39:24.402Z",
   "apps": {
     "payforge": {
       "key": "payforge",
@@ -54,11 +54,11 @@
       "name": "ForgeShift",
       "appId": "6762021609",
       "status": "ok",
-      "version": "1.0.3",
-      "releaseDate": "2026-07-14T17:09:40.000Z",
-      "notes": "• Reduced task-assignment prewarming from up to 10–12 API requests per batch to one range request.\n• Moved cache encoding and disk writes onto dedicated utility queues.\n• Added in-memory shift and task-assignment caches.\n• Made API configuration thread-safe and removed shared encoder/decoder concurrency risks.\n• Prevented stale requests from overwriting another user’s shifts or a newly selected calendar month.\n• Parallelised user, team, and team-member loading.\n• Prevented reminder scheduling from extending the visible shift-loading state.\n• Eliminated potentially hundreds of avatar verification requests after one upload.\n• Added a bounded 15-minute avatar cache to balance performance and freshness.\n• Calculated calendar month data once per render instead of rebuilding it for every day cell.\n• Precomputed upcoming-shift rows and section labels in one pass.\n• Replaced repeated date/time formatter work with lightweight arithmetic where appropriate.\n• Corrected the weekly summary so “Upcoming” only includes the current week.\n• Calendar and shift-detail screens now refresh only after an actual save.\n• Fixed calendar creation and template-created shifts not reliably appearing after saving.\n• Parallelised team-member requests while retaining partial successful results.\n• Fixed Watch and widget views showing an expired past shift as the “next” shift.\n• Reworked Watch calendar indexing from roughly days × shifts work to a single shift pass.\n• Prevented outdated queued Watch transfers from rolling back newer data.\n• Ensured appearance updates preserve the current Watch shift payload.\n• Avoided repeated widget storage writes and reloads when shift content has not changed.\n• Added idempotent Watch session startup and skipped redundant persistence updates.\n• Retained correct Gregorian server-date handling for devices using non-Gregorian calendars.\n• Removed unused models, state, methods, formatting helpers, and the obsolete share-sheet component.",
+      "version": "1.0.4",
+      "releaseDate": "2026-07-15T05:14:54.000Z",
+      "notes": "• Restored the Upcoming summary to include all future scheduled shifts.\n• Annual leave, days off and on-call duties are now included.\n• Completed hours remain focused on the current week.",
       "appStoreUrl": "https://apps.apple.com/gb/app/forgeshift/id6762021609?uo=4",
-      "previousVersion": "1.0.4",
+      "previousVersion": "1.0.3",
       "hasUpdate": true,
       "releaseHistory": [
         {
@@ -114,13 +114,19 @@
       "name": "WatchCue",
       "appId": "6790001201",
       "status": "ok",
-      "version": "1.0.0",
-      "releaseDate": "2026-07-14T13:01:27.000Z",
-      "notes": "Initial Release",
+      "version": "1.2.0",
+      "releaseDate": "2026-07-15T21:58:21.000Z",
+      "notes": "• Redesigned series pages around seasons instead of displaying episodes immediately.\n• Added season cards showing watched episodes, total episodes, and progress.\n• Added quick watched/unwatched controls to every season.\n• Added dedicated season pages containing individual episode lists.\n• Moved season and whole-series bulk watch actions into the season area.\n• Next-episode suggestions now show every eligible series instead of stopping after five.\n• Next-episode suggestions are limited to shows marked as Watching.\n• Planning, On Hold, Dropped, Caught Up, and Completed shows are excluded from next-episode suggestions.\n• Added VoiceOver labels identifying the season affected by quick actions.\n• Added German, Spanish, and French translations for the new season interface.\n• Matched bottom spacing between series pages and Upcoming.\n• Standardised edge spacing across one-, two-, and three-column Profile layouts.\n• Fixed season pages briefly opening and immediately returning to series details.\n• Fixed episode details appearing briefly before returning to the season page.\n• Fixed Profile grid navigation reopening series details over season pages.\n• Fixed Profile grid cards displaying unwanted disclosure arrows.\n• Fixed Profile grid cards opening the last show instead of the selected show.\n• Fixed watched-state changes becoming stale after returning from episode details.\n• Fixed obsolete episode metadata affecting season totals and progress.\n• Fixed duplicate weekday identifiers for Tuesday/Thursday and Saturday/Sunday in the Upcoming calendar.\n• Reduced undefined SwiftUI grid behaviour and repeated layout updates that could contribute to interface lock-ups.\n• Unified series, season, and episode navigation under one value-based navigation path.\n• Made season pages query persisted episode information independently.\n• Preserved stable season-route identity while filtering against current episode IDs.\n• Removed obsolete captured bulk-action and navigation state.\n• Added coverage for next-episode eligibility and Remaining-count behaviour.",
       "appStoreUrl": "https://apps.apple.com/gb/app/watchcue/id6790001201?uo=4",
-      "previousVersion": "1.1.0",
+      "previousVersion": "1.0.0",
       "hasUpdate": true,
       "releaseHistory": [
+        {
+          "version": "1.2.0",
+          "releaseDate": "2026-07-15T21:58:21.000Z",
+          "notes": "• Redesigned series pages around seasons instead of displaying episodes immediately.\n• Added season cards showing watched episodes, total episodes, and progress.\n• Added quick watched/unwatched controls to every season.\n• Added dedicated season pages containing individual episode lists.\n• Moved season and whole-series bulk watch actions into the season area.\n• Next-episode suggestions now show every eligible series instead of stopping after five.\n• Next-episode suggestions are limited to shows marked as Watching.\n• Planning, On Hold, Dropped, Caught Up, and Completed shows are excluded from next-episode suggestions.\n• Added VoiceOver labels identifying the season affected by quick actions.\n• Added German, Spanish, and French translations for the new season interface.\n• Matched bottom spacing between series pages and Upcoming.\n• Standardised edge spacing across one-, two-, and three-column Profile layouts.\n• Fixed season pages briefly opening and immediately returning to series details.\n• Fixed episode details appearing briefly before returning to the season page.\n• Fixed Profile grid navigation reopening series details over season pages.\n• Fixed Profile grid cards displaying unwanted disclosure arrows.\n• Fixed Profile grid cards opening the last show instead of the selected show.\n• Fixed watched-state changes becoming stale after returning from episode details.\n• Fixed obsolete episode metadata affecting season totals and progress.\n• Fixed duplicate weekday identifiers for Tuesday/Thursday and Saturday/Sunday in the Upcoming calendar.\n• Reduced undefined SwiftUI grid behaviour and repeated layout updates that could contribute to interface lock-ups.\n• Unified series, season, and episode navigation under one value-based navigation path.\n• Made season pages query persisted episode information independently.\n• Preserved stable season-route identity while filtering against current episode IDs.\n• Removed obsolete captured bulk-action and navigation state.\n• Added coverage for next-episode eligibility and Remaining-count behaviour.",
+          "appStoreUrl": "https://apps.apple.com/gb/app/watchcue/id6790001201?uo=4"
+        },
         {
           "version": "1.1.0",
           "releaseDate": "2026-07-15T06:33:29.000Z",
@@ -135,6 +141,12 @@
         }
       ],
       "previousUpdates": [
+        {
+          "version": "1.1.0",
+          "releaseDate": "2026-07-15T06:33:29.000Z",
+          "notes": "• Added Device Language support with optional manual language overrides.\n• Added English, Spanish, French and German localisations across onboarding, settings, navigation, statuses, errors and empty states.\n• Fixed language switching, persistence and English fallback behaviour.\n• Added translated TV and movie metadata with English fallback.\n• Added metadata language and region selectors.\n• Added one, two and three-column Profile layouts, with one column as the default.\n• Improved Profile grid card sizing, spacing, typography and Dynamic Type support.\n• Fixed Profile grid navigation, unwanted arrows, disappearing toolbar controls and excessive back-navigation.\n• Moved Library and Profile layout controls into Customisation settings.\n• Reset Customisation now restores Library and Profile layout defaults.\n• Improved search ordering, stability, history layout and caching.\n• Added offline caching for artwork, library metadata, search results and viewing data.\n• Improved artwork loading and cache-clearing reliability.\n• Added cache storage information, individual clearing controls and cache-clearing warnings.\n• Added information about the 250 MB artwork cache limit.\n• Reduced unnecessary API calls, metadata refreshes, data lookups and SwiftData queries.\n• Added bounded API caches and improved cache concurrency and memory management.\n• Improved Home, Search, Library, Profile, Upcoming and title-detail loading performance.\n• Added stable sorting to prevent content unexpectedly reordering after refreshes.\n• Dropped shows no longer count towards episode progress or remaining episodes.\n• Improved Caught Up and Completed status calculations for continuing and ended shows.\n• Shows are now automatically followed when an episode is marked as watched.\n• Added reversible season and all-season watched actions with updated labels.\n• Improved manual episode marking, immediate checkmark feedback and gesture handling.\n• Improved movie watched/unwatched actions, ratings and Profile filter switching.\n• Added calendar release indicators and quick release-day filtering.\n• Improved Home “Up Next” artwork, long-title layouts, episode details and release dates.\n• Fixed landscape episode artwork overlapping Home screen content.\n• Improved Settings organisation, interaction feedback and accessibility.\n• Improved CloudKit backup handling, validation and error reporting.\n• Improved account deletion and private CloudKit backup cleanup.\n• Backup imports now reject duplicate episode and movie records before changing local data.\n• Corrected App Store donation product identifiers.\n• Removed unused and duplicated code and expanded regression coverage.\n• General stability, performance, caching and memory-usage improvements throughout the app.",
+          "appStoreUrl": "https://apps.apple.com/gb/app/watchcue/id6790001201?uo=4"
+        },
         {
           "version": "1.0.0",
           "releaseDate": "2026-07-14T13:01:27.000Z",
