@@ -1,7 +1,7 @@
 {
   "source": "itunes-lookup",
   "country": "gb",
-  "generatedAt": "2026-07-24T08:43:44.566Z",
+  "generatedAt": "2026-07-24T14:14:28.226Z",
   "apps": {
     "payforge": {
       "key": "payforge",
@@ -58,8 +58,8 @@
       "releaseDate": "2026-07-24T01:03:59.000Z",
       "notes": "• Fixed completed shifts not appearing correctly in the weekly hours summary.\n• Completed On-Call shifts now contribute to worked hours and shift totals.\n• On-Call is now treated as an additional status instead of replacing shift information such as location and working hours.\n• Fixed shifts appearing in both Completed and Upcoming before their scheduled end time.\n• Improved On-Call timing across the app, widgets, and Apple Watch.",
       "appStoreUrl": "https://apps.apple.com/gb/app/forgeshift/id6762021609?uo=4",
-      "previousVersion": "1.0.4",
-      "hasUpdate": true,
+      "previousVersion": "1.0.5",
+      "hasUpdate": false,
       "releaseHistory": [
         {
           "version": "1.0.5",
