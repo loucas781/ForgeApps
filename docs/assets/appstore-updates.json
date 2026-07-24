@@ -1,7 +1,7 @@
 {
   "source": "itunes-lookup",
   "country": "gb",
-  "generatedAt": "2026-07-24T14:14:28.226Z",
+  "generatedAt": "2026-07-24T19:48:14.586Z",
   "apps": {
     "payforge": {
       "key": "payforge",
@@ -126,13 +126,19 @@
       "name": "WatchCue",
       "appId": "6790001201",
       "status": "ok",
-      "version": "1.2.0",
-      "releaseDate": "2026-07-15T21:58:21.000Z",
-      "notes": "• Redesigned series pages around seasons instead of displaying episodes immediately.\n• Added season cards showing watched episodes, total episodes, and progress.\n• Added quick watched/unwatched controls to every season.\n• Added dedicated season pages containing individual episode lists.\n• Moved season and whole-series bulk watch actions into the season area.\n• Next-episode suggestions now show every eligible series instead of stopping after five.\n• Next-episode suggestions are limited to shows marked as Watching.\n• Planning, On Hold, Dropped, Caught Up, and Completed shows are excluded from next-episode suggestions.\n• Added VoiceOver labels identifying the season affected by quick actions.\n• Added German, Spanish, and French translations for the new season interface.\n• Matched bottom spacing between series pages and Upcoming.\n• Standardised edge spacing across one-, two-, and three-column Profile layouts.\n• Fixed season pages briefly opening and immediately returning to series details.\n• Fixed episode details appearing briefly before returning to the season page.\n• Fixed Profile grid navigation reopening series details over season pages.\n• Fixed Profile grid cards displaying unwanted disclosure arrows.\n• Fixed Profile grid cards opening the last show instead of the selected show.\n• Fixed watched-state changes becoming stale after returning from episode details.\n• Fixed obsolete episode metadata affecting season totals and progress.\n• Fixed duplicate weekday identifiers for Tuesday/Thursday and Saturday/Sunday in the Upcoming calendar.\n• Reduced undefined SwiftUI grid behaviour and repeated layout updates that could contribute to interface lock-ups.\n• Unified series, season, and episode navigation under one value-based navigation path.\n• Made season pages query persisted episode information independently.\n• Preserved stable season-route identity while filtering against current episode IDs.\n• Removed obsolete captured bulk-action and navigation state.\n• Added coverage for next-episode eligibility and Remaining-count behaviour.",
+      "version": "1.2.1",
+      "releaseDate": "2026-07-24T15:11:56.000Z",
+      "notes": "• Fixed Support WatchCue in-app purchase availability by using the App Store product identifiers.\n• Added episode thumbnail artwork to season episode rows.\n• Updated Home episode rows to prefer episode artwork when available.\n• Added a series poster fallback to Home episode rows when episode artwork is unavailable.\n• Moved season episode watched/unwatched controls to the right.\n• Increased season episode watched/unwatched controls to a 44x44 touch target.\n• Resized season episode thumbnails to 96x58 to match Home.\n• Added the custom watched/progress checkmark colour to Home episode rows.\n• Updated Continue Watching action buttons to always use the custom watched/progress colour.\n• Added an adaptive contrast outline to keep low-contrast custom-colour Continue Watching buttons visible.\n• Added the custom watched/progress checkmark colour to Home movie rows.\n• Standardized Home watched indicators to title2 icon sizing.\n• Increased Home episode completion buttons to 44x44 touch targets.\n• Standardized watched/progress indicators with shared title2 sizing, colour handling, and 44x44 visual frames.\n• Made custom-colour contrast outlines conditional across watched/progress indicators.\n• Added explicit watched-date context for VoiceOver on Home movie rows.\n• Updated customization wording to describe watched/progress check marks.\n• Localized the Customization reset confirmation on its own page.\n• Localized Data cache and local-data confirmations on the Data page.\n• Localized Data importer, exporter, and error presentations on the Data page.\n• Localized Notifications permission and update errors on the Notifications page.\n• Localized Viewing metadata refresh errors on the Viewing page.",
       "appStoreUrl": "https://apps.apple.com/gb/app/watchcue/id6790001201?uo=4",
       "previousVersion": "1.2.0",
-      "hasUpdate": false,
+      "hasUpdate": true,
       "releaseHistory": [
+        {
+          "version": "1.2.1",
+          "releaseDate": "2026-07-24T15:11:56.000Z",
+          "notes": "• Fixed Support WatchCue in-app purchase availability by using the App Store product identifiers.\n• Added episode thumbnail artwork to season episode rows.\n• Updated Home episode rows to prefer episode artwork when available.\n• Added a series poster fallback to Home episode rows when episode artwork is unavailable.\n• Moved season episode watched/unwatched controls to the right.\n• Increased season episode watched/unwatched controls to a 44x44 touch target.\n• Resized season episode thumbnails to 96x58 to match Home.\n• Added the custom watched/progress checkmark colour to Home episode rows.\n• Updated Continue Watching action buttons to always use the custom watched/progress colour.\n• Added an adaptive contrast outline to keep low-contrast custom-colour Continue Watching buttons visible.\n• Added the custom watched/progress checkmark colour to Home movie rows.\n• Standardized Home watched indicators to title2 icon sizing.\n• Increased Home episode completion buttons to 44x44 touch targets.\n• Standardized watched/progress indicators with shared title2 sizing, colour handling, and 44x44 visual frames.\n• Made custom-colour contrast outlines conditional across watched/progress indicators.\n• Added explicit watched-date context for VoiceOver on Home movie rows.\n• Updated customization wording to describe watched/progress check marks.\n• Localized the Customization reset confirmation on its own page.\n• Localized Data cache and local-data confirmations on the Data page.\n• Localized Data importer, exporter, and error presentations on the Data page.\n• Localized Notifications permission and update errors on the Notifications page.\n• Localized Viewing metadata refresh errors on the Viewing page.",
+          "appStoreUrl": "https://apps.apple.com/gb/app/watchcue/id6790001201?uo=4"
+        },
         {
           "version": "1.2.0",
           "releaseDate": "2026-07-15T21:58:21.000Z",
@@ -153,6 +159,12 @@
         }
       ],
       "previousUpdates": [
+        {
+          "version": "1.2.0",
+          "releaseDate": "2026-07-15T21:58:21.000Z",
+          "notes": "• Redesigned series pages around seasons instead of displaying episodes immediately.\n• Added season cards showing watched episodes, total episodes, and progress.\n• Added quick watched/unwatched controls to every season.\n• Added dedicated season pages containing individual episode lists.\n• Moved season and whole-series bulk watch actions into the season area.\n• Next-episode suggestions now show every eligible series instead of stopping after five.\n• Next-episode suggestions are limited to shows marked as Watching.\n• Planning, On Hold, Dropped, Caught Up, and Completed shows are excluded from next-episode suggestions.\n• Added VoiceOver labels identifying the season affected by quick actions.\n• Added German, Spanish, and French translations for the new season interface.\n• Matched bottom spacing between series pages and Upcoming.\n• Standardised edge spacing across one-, two-, and three-column Profile layouts.\n• Fixed season pages briefly opening and immediately returning to series details.\n• Fixed episode details appearing briefly before returning to the season page.\n• Fixed Profile grid navigation reopening series details over season pages.\n• Fixed Profile grid cards displaying unwanted disclosure arrows.\n• Fixed Profile grid cards opening the last show instead of the selected show.\n• Fixed watched-state changes becoming stale after returning from episode details.\n• Fixed obsolete episode metadata affecting season totals and progress.\n• Fixed duplicate weekday identifiers for Tuesday/Thursday and Saturday/Sunday in the Upcoming calendar.\n• Reduced undefined SwiftUI grid behaviour and repeated layout updates that could contribute to interface lock-ups.\n• Unified series, season, and episode navigation under one value-based navigation path.\n• Made season pages query persisted episode information independently.\n• Preserved stable season-route identity while filtering against current episode IDs.\n• Removed obsolete captured bulk-action and navigation state.\n• Added coverage for next-episode eligibility and Remaining-count behaviour.",
+          "appStoreUrl": "https://apps.apple.com/gb/app/watchcue/id6790001201?uo=4"
+        },
         {
           "version": "1.1.0",
           "releaseDate": "2026-07-15T06:33:29.000Z",
