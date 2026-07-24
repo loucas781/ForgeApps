@@ -1,7 +1,7 @@
 {
   "source": "itunes-lookup",
   "country": "gb",
-  "generatedAt": "2026-07-24T03:45:43.666Z",
+  "generatedAt": "2026-07-24T08:43:44.566Z",
   "apps": {
     "payforge": {
       "key": "payforge",
@@ -54,13 +54,19 @@
       "name": "ForgeShift",
       "appId": "6762021609",
       "status": "ok",
-      "version": "1.0.4",
-      "releaseDate": "2026-07-15T05:14:54.000Z",
-      "notes": "• Restored the Upcoming summary to include all future scheduled shifts.\n• Annual leave, days off and on-call duties are now included.\n• Completed hours remain focused on the current week.",
+      "version": "1.0.5",
+      "releaseDate": "2026-07-24T01:03:59.000Z",
+      "notes": "• Fixed completed shifts not appearing correctly in the weekly hours summary.\n• Completed On-Call shifts now contribute to worked hours and shift totals.\n• On-Call is now treated as an additional status instead of replacing shift information such as location and working hours.\n• Fixed shifts appearing in both Completed and Upcoming before their scheduled end time.\n• Improved On-Call timing across the app, widgets, and Apple Watch.",
       "appStoreUrl": "https://apps.apple.com/gb/app/forgeshift/id6762021609?uo=4",
       "previousVersion": "1.0.4",
-      "hasUpdate": false,
+      "hasUpdate": true,
       "releaseHistory": [
+        {
+          "version": "1.0.5",
+          "releaseDate": "2026-07-24T01:03:59.000Z",
+          "notes": "• Fixed completed shifts not appearing correctly in the weekly hours summary.\n• Completed On-Call shifts now contribute to worked hours and shift totals.\n• On-Call is now treated as an additional status instead of replacing shift information such as location and working hours.\n• Fixed shifts appearing in both Completed and Upcoming before their scheduled end time.\n• Improved On-Call timing across the app, widgets, and Apple Watch.",
+          "appStoreUrl": "https://apps.apple.com/gb/app/forgeshift/id6762021609?uo=4"
+        },
         {
           "version": "1.0.4",
           "releaseDate": "2026-07-15T05:14:54.000Z",
@@ -81,6 +87,12 @@
         }
       ],
       "previousUpdates": [
+        {
+          "version": "1.0.4",
+          "releaseDate": "2026-07-15T05:14:54.000Z",
+          "notes": "• Restored the Upcoming summary to include all future scheduled shifts.\n• Annual leave, days off and on-call duties are now included.\n• Completed hours remain focused on the current week.",
+          "appStoreUrl": "https://apps.apple.com/gb/app/forgeshift/id6762021609?uo=4"
+        },
         {
           "version": "1.0.3",
           "releaseDate": "2026-07-14T17:09:40.000Z",
