@@ -1,7 +1,7 @@
 {
   "source": "itunes-lookup",
   "country": "gb",
-  "generatedAt": "2026-07-24T19:48:14.586Z",
+  "generatedAt": "2026-07-25T03:40:10.586Z",
   "apps": {
     "payforge": {
       "key": "payforge",
@@ -130,8 +130,8 @@
       "releaseDate": "2026-07-24T15:11:56.000Z",
       "notes": "• Fixed Support WatchCue in-app purchase availability by using the App Store product identifiers.\n• Added episode thumbnail artwork to season episode rows.\n• Updated Home episode rows to prefer episode artwork when available.\n• Added a series poster fallback to Home episode rows when episode artwork is unavailable.\n• Moved season episode watched/unwatched controls to the right.\n• Increased season episode watched/unwatched controls to a 44x44 touch target.\n• Resized season episode thumbnails to 96x58 to match Home.\n• Added the custom watched/progress checkmark colour to Home episode rows.\n• Updated Continue Watching action buttons to always use the custom watched/progress colour.\n• Added an adaptive contrast outline to keep low-contrast custom-colour Continue Watching buttons visible.\n• Added the custom watched/progress checkmark colour to Home movie rows.\n• Standardized Home watched indicators to title2 icon sizing.\n• Increased Home episode completion buttons to 44x44 touch targets.\n• Standardized watched/progress indicators with shared title2 sizing, colour handling, and 44x44 visual frames.\n• Made custom-colour contrast outlines conditional across watched/progress indicators.\n• Added explicit watched-date context for VoiceOver on Home movie rows.\n• Updated customization wording to describe watched/progress check marks.\n• Localized the Customization reset confirmation on its own page.\n• Localized Data cache and local-data confirmations on the Data page.\n• Localized Data importer, exporter, and error presentations on the Data page.\n• Localized Notifications permission and update errors on the Notifications page.\n• Localized Viewing metadata refresh errors on the Viewing page.",
       "appStoreUrl": "https://apps.apple.com/gb/app/watchcue/id6790001201?uo=4",
-      "previousVersion": "1.2.0",
-      "hasUpdate": true,
+      "previousVersion": "1.2.1",
+      "hasUpdate": false,
       "releaseHistory": [
         {
           "version": "1.2.1",
