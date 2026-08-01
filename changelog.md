@@ -1,5 +1,12 @@
 # Changelog
 
+## 2026-08-01
+
+- Modernised the shared platform and application page presentation.
+- Added ForgeShift web project access, iOS availability, and Android coming-soon messaging.
+- Added ForgeTrack web project access and iOS coming-soon messaging.
+- Standardised platform cards and legal/support actions across app pages.
+
 ## 2026-07-24
 
 - Updated WatchCue from submitted to available on the App Store.
