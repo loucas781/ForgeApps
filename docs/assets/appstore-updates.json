@@ -1,7 +1,7 @@
 {
   "source": "itunes-lookup",
   "country": "gb",
-  "generatedAt": "2026-08-05T19:56:30.389Z",
+  "generatedAt": "2026-08-06T03:40:55.613Z",
   "apps": {
     "payforge": {
       "key": "payforge",
@@ -58,8 +58,8 @@
       "releaseDate": "2026-08-05T16:27:13.000Z",
       "notes": "• Added support for custom role names and colours.\n• Added organisation-linked locations with access based on organisation membership.\n• Improved Team and Location screen presentation.",
       "appStoreUrl": "https://apps.apple.com/gb/app/forgeshift/id6762021609?uo=4",
-      "previousVersion": "1.0.5",
-      "hasUpdate": true,
+      "previousVersion": "1.0.6",
+      "hasUpdate": false,
       "releaseHistory": [
         {
           "version": "1.0.6",
