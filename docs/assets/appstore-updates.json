@@ -1,7 +1,7 @@
 {
   "source": "itunes-lookup",
   "country": "gb",
-  "generatedAt": "2026-08-14T07:51:54.463Z",
+  "generatedAt": "2026-08-14T13:45:02.007Z",
   "apps": {
     "payforge": {
       "key": "payforge",
@@ -54,13 +54,19 @@
       "name": "ForgeShift",
       "appId": "6762021609",
       "status": "ok",
-      "version": "1.0.6",
-      "releaseDate": "2026-08-05T16:27:13.000Z",
-      "notes": "• Added support for custom role names and colours.\n• Added organisation-linked locations with access based on organisation membership.\n• Improved Team and Location screen presentation.",
+      "version": "1.0.7",
+      "releaseDate": "2026-08-14T12:43:32.000Z",
+      "notes": "• Added section-level permissions across Calendar, Shifts, Tasks, Team, Locations and Settings.\n• Custom roles now display the correct access, name and colour throughout the app.\n• Added organisation-scoped team visibility and organisation information for locations.\n• Fixed shift viewing and editing for users with custom role permissions.\n• Fixed custom role permissions across Calendar, Shifts, Tasks, Team, Locations and Settings.\n• “View Team Rotas” and “View All Rotas” now show permitted colleagues in the calendar selector.\n• Improved shift editing and task assignment for scoped custom roles.\n• Inactive accounts no longer appear in team or shift-assignment lists.\n• Improved compatibility with server-provided section access and feature settings.\n• Improved scrolling smoothness throughout the app, especially in Settings.\n• Reduced background animation power use to help lower battery drain and device heat.\n• Reduced unnecessary network, notification and refresh activity.\n• Improved performance when loading teams and large organisations.",
       "appStoreUrl": "https://apps.apple.com/gb/app/forgeshift/id6762021609?uo=4",
       "previousVersion": "1.0.6",
-      "hasUpdate": false,
+      "hasUpdate": true,
       "releaseHistory": [
+        {
+          "version": "1.0.7",
+          "releaseDate": "2026-08-14T12:43:32.000Z",
+          "notes": "• Added section-level permissions across Calendar, Shifts, Tasks, Team, Locations and Settings.\n• Custom roles now display the correct access, name and colour throughout the app.\n• Added organisation-scoped team visibility and organisation information for locations.\n• Fixed shift viewing and editing for users with custom role permissions.\n• Fixed custom role permissions across Calendar, Shifts, Tasks, Team, Locations and Settings.\n• “View Team Rotas” and “View All Rotas” now show permitted colleagues in the calendar selector.\n• Improved shift editing and task assignment for scoped custom roles.\n• Inactive accounts no longer appear in team or shift-assignment lists.\n• Improved compatibility with server-provided section access and feature settings.\n• Improved scrolling smoothness throughout the app, especially in Settings.\n• Reduced background animation power use to help lower battery drain and device heat.\n• Reduced unnecessary network, notification and refresh activity.\n• Improved performance when loading teams and large organisations.",
+          "appStoreUrl": "https://apps.apple.com/gb/app/forgeshift/id6762021609?uo=4"
+        },
         {
           "version": "1.0.6",
           "releaseDate": "2026-08-05T16:27:13.000Z",
@@ -93,6 +99,12 @@
         }
       ],
       "previousUpdates": [
+        {
+          "version": "1.0.6",
+          "releaseDate": "2026-08-05T16:27:13.000Z",
+          "notes": "• Added support for custom role names and colours.\n• Added organisation-linked locations with access based on organisation membership.\n• Improved Team and Location screen presentation.",
+          "appStoreUrl": "https://apps.apple.com/gb/app/forgeshift/id6762021609?uo=4"
+        },
         {
           "version": "1.0.5",
           "releaseDate": "2026-07-24T01:03:59.000Z",
