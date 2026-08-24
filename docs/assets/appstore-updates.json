@@ -1,7 +1,7 @@
 {
   "source": "itunes-lookup",
   "country": "gb",
-  "generatedAt": "2026-08-24T13:14:31.815Z",
+  "generatedAt": "2026-08-24T19:00:41.712Z",
   "apps": {
     "payforge": {
       "key": "payforge",
@@ -54,13 +54,19 @@
       "name": "ForgeShift",
       "appId": "6762021609",
       "status": "ok",
-      "version": "1.0.7",
-      "releaseDate": "2026-08-14T12:43:32.000Z",
-      "notes": "• Added section-level permissions across Calendar, Shifts, Tasks, Team, Locations and Settings.\n• Custom roles now display the correct access, name and colour throughout the app.\n• Added organisation-scoped team visibility and organisation information for locations.\n• Fixed shift viewing and editing for users with custom role permissions.\n• Fixed custom role permissions across Calendar, Shifts, Tasks, Team, Locations and Settings.\n• “View Team Rotas” and “View All Rotas” now show permitted colleagues in the calendar selector.\n• Improved shift editing and task assignment for scoped custom roles.\n• Inactive accounts no longer appear in team or shift-assignment lists.\n• Improved compatibility with server-provided section access and feature settings.\n• Improved scrolling smoothness throughout the app, especially in Settings.\n• Reduced background animation power use to help lower battery drain and device heat.\n• Reduced unnecessary network, notification and refresh activity.\n• Improved performance when loading teams and large organisations.",
+      "version": "1.0.8",
+      "releaseDate": "2026-08-24T18:24:36.000Z",
+      "notes": "• Matched absent-day colour dots to the neutral Annual Leave / Day Off colour.\n• Fixed widget preview data after adding Absent / Sick shift support.\n• Added native Absent / Sick day support alongside Annual Leave.\n• Absent days appear as all-day entries and can be created or edited from the shift form.",
       "appStoreUrl": "https://apps.apple.com/gb/app/forgeshift/id6762021609?uo=4",
       "previousVersion": "1.0.7",
-      "hasUpdate": false,
+      "hasUpdate": true,
       "releaseHistory": [
+        {
+          "version": "1.0.8",
+          "releaseDate": "2026-08-24T18:24:36.000Z",
+          "notes": "• Matched absent-day colour dots to the neutral Annual Leave / Day Off colour.\n• Fixed widget preview data after adding Absent / Sick shift support.\n• Added native Absent / Sick day support alongside Annual Leave.\n• Absent days appear as all-day entries and can be created or edited from the shift form.",
+          "appStoreUrl": "https://apps.apple.com/gb/app/forgeshift/id6762021609?uo=4"
+        },
         {
           "version": "1.0.7",
           "releaseDate": "2026-08-14T12:43:32.000Z",
@@ -99,6 +105,12 @@
         }
       ],
       "previousUpdates": [
+        {
+          "version": "1.0.7",
+          "releaseDate": "2026-08-14T12:43:32.000Z",
+          "notes": "• Added section-level permissions across Calendar, Shifts, Tasks, Team, Locations and Settings.\n• Custom roles now display the correct access, name and colour throughout the app.\n• Added organisation-scoped team visibility and organisation information for locations.\n• Fixed shift viewing and editing for users with custom role permissions.\n• Fixed custom role permissions across Calendar, Shifts, Tasks, Team, Locations and Settings.\n• “View Team Rotas” and “View All Rotas” now show permitted colleagues in the calendar selector.\n• Improved shift editing and task assignment for scoped custom roles.\n• Inactive accounts no longer appear in team or shift-assignment lists.\n• Improved compatibility with server-provided section access and feature settings.\n• Improved scrolling smoothness throughout the app, especially in Settings.\n• Reduced background animation power use to help lower battery drain and device heat.\n• Reduced unnecessary network, notification and refresh activity.\n• Improved performance when loading teams and large organisations.",
+          "appStoreUrl": "https://apps.apple.com/gb/app/forgeshift/id6762021609?uo=4"
+        },
         {
           "version": "1.0.6",
           "releaseDate": "2026-08-05T16:27:13.000Z",
