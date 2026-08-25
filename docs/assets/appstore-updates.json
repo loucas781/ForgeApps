@@ -1,7 +1,7 @@
 {
   "source": "itunes-lookup",
   "country": "gb",
-  "generatedAt": "2026-08-24T19:00:41.712Z",
+  "generatedAt": "2026-08-25T01:53:21.325Z",
   "apps": {
     "payforge": {
       "key": "payforge",
@@ -58,8 +58,8 @@
       "releaseDate": "2026-08-24T18:24:36.000Z",
       "notes": "• Matched absent-day colour dots to the neutral Annual Leave / Day Off colour.\n• Fixed widget preview data after adding Absent / Sick shift support.\n• Added native Absent / Sick day support alongside Annual Leave.\n• Absent days appear as all-day entries and can be created or edited from the shift form.",
       "appStoreUrl": "https://apps.apple.com/gb/app/forgeshift/id6762021609?uo=4",
-      "previousVersion": "1.0.7",
-      "hasUpdate": true,
+      "previousVersion": "1.0.8",
+      "hasUpdate": false,
       "releaseHistory": [
         {
           "version": "1.0.8",
