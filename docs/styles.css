@@ -740,10 +740,10 @@ a.platform-card:hover {
   gap: 9px;
   min-height: 40px;
   padding: 5px 13px;
-  border: 1px solid var(--text);
+  border: 1px solid var(--border-strong);
   border-radius: 7px;
-  background: var(--text);
-  color: var(--page);
+  background: var(--surface-strong);
+  color: var(--text);
   line-height: 1;
   text-decoration: none;
 }
@@ -853,6 +853,7 @@ a.platform-card:hover {
   border: 1px solid var(--border);
   border-radius: 999px;
   background: var(--surface-soft);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.16);
 }
 
 .update-platform-tab {
@@ -867,10 +868,27 @@ a.platform-card:hover {
 }
 
 .update-platform-tab[aria-selected="true"] {
-  background: var(--surface-strong);
-  color: var(--text);
-  box-shadow: var(--shadow-soft), inset 0 1px 0 rgba(255,255,255,0.22);
+  background: var(--accent);
+  color: #fff;
+  box-shadow: 0 3px 10px var(--accent-soft), inset 0 1px 0 rgba(255,255,255,0.32);
 }
+
+.app-update-card [data-update-title],
+.app-update-card [data-update-version],
+.app-update-card [data-update-date],
+.app-update-card [data-update-notes],
+.app-update-card [data-update-history],
+.app-update-card [data-update-link] {
+  opacity: 1;
+  transition: opacity 0.24s ease;
+}
+
+.app-update-card.platform-switching [data-update-title],
+.app-update-card.platform-switching [data-update-version],
+.app-update-card.platform-switching [data-update-date],
+.app-update-card.platform-switching [data-update-notes],
+.app-update-card.platform-switching [data-update-history],
+.app-update-card.platform-switching [data-update-link] { opacity: 0; }
 
 .update-platform-tab:focus-visible {
   outline: 3px solid var(--ring);

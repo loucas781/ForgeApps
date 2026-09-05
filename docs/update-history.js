@@ -14,7 +14,7 @@ const formatHistoryReleaseDate = (isoDate) => {
 
 const releaseIdentity = (release) => release?.version || '';
 
-const isInitialReleaseVersion = (version) => /^1(?:\.0)+$/.test(String(version || '').trim());
+const isInitialReleaseVersion = (version) => /^1\.0(?:\.0|\.1)?$/.test(String(version || '').trim());
 
 const releaseNotesFor = (version, notes) => {
   if (isInitialReleaseVersion(version)) return 'Initial Release';

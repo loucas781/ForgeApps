@@ -2,11 +2,15 @@
 
 ## 2026-09-05
 
+- Updated billing support guidance to cover both the App Store and Google Play.
+- Updated the Privacy Policy and Terms of Use to explain store-specific payment processing and purchase terms.
 - Added separate iOS and Android update-history tabs for ForgeShift.
 - Added Google Play version and release-note syncing for ForgeShift Android.
 - Preserved separate current-version and previous-release histories for each platform.
 - Updated ForgeShift Android from coming soon to released and linked its Google Play listing.
 - Added theme-aware Google Play download badges to the homepage and ForgeShift page.
+- Styled the iOS and Android history switcher as a glass segmented control with a content fade.
+- Marked ForgeShift Android `1.0.1` as the initial release.
 - Changed automatic update checks to run weekly.
 
 ## 2026-08-01

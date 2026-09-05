@@ -43,7 +43,7 @@ const toIsoDate = (value) => {
   return date.toISOString();
 };
 
-const isInitialReleaseVersion = (version) => /^1(?:\.0)+$/.test(String(version || '').trim());
+const isInitialReleaseVersion = (version) => /^1\.0(?:\.0|\.1)?$/.test(String(version || '').trim());
 
 const releaseNotesFor = (version, notes) => {
   if (isInitialReleaseVersion(version)) return 'Initial Release';

@@ -119,7 +119,7 @@ const formatReleaseDate = (isoDate) => {
   }).format(parsed);
 };
 
-const isInitialReleaseVersion = (version) => /^1(?:\.0)+$/.test(String(version || '').trim());
+const isInitialReleaseVersion = (version) => /^1\.0(?:\.0|\.1)?$/.test(String(version || '').trim());
 
 const releaseNotesFor = (version, notes) => {
   if (isInitialReleaseVersion(version)) return 'Initial Release';
@@ -306,6 +306,10 @@ appUpdateCards.forEach((card) => {
   card.dataset.selectedPlatform = 'ios';
   card.querySelectorAll('[data-update-platform]').forEach((button) => {
     button.addEventListener('click', () => {
+      if (button.dataset.updatePlatform === (card.dataset.selectedPlatform || 'ios')) return;
+      card.classList.remove('platform-switching');
+      void card.offsetWidth;
+      card.classList.add('platform-switching');
       card.dataset.selectedPlatform = button.dataset.updatePlatform || 'ios';
       card.querySelectorAll('[data-update-platform]').forEach((tab) => {
         tab.setAttribute('aria-selected', String(tab === button));
@@ -316,6 +320,7 @@ appUpdateCards.forEach((card) => {
         .then((payload) => renderUpdateCard(card, payload?.apps?.[appKey] || null))
         .catch(() => {});
       card.dispatchEvent(new CustomEvent('forge-platform-change'));
+      window.setTimeout(() => card.classList.remove('platform-switching'), 260);
     });
   });
 });
