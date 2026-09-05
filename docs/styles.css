@@ -740,15 +740,16 @@ a.platform-card:hover {
   gap: 9px;
   min-height: 40px;
   padding: 5px 13px;
-  border: 1px solid var(--border-strong);
+  border: 1px solid #111;
   border-radius: 7px;
-  background: var(--surface-strong);
-  color: var(--text);
+  background: #fff;
+  color: #111;
   line-height: 1;
   text-decoration: none;
 }
 
-.google-play-badge:hover { transform: translateY(-2px); }
+.google-play-badge:hover { filter: brightness(1.04); transform: translateY(-2px); }
+.google-play-badge:active { filter: brightness(.96); transform: translateY(0) scale(.98); }
 .google-play-badge span:last-child { display: grid; gap: 3px; }
 .google-play-badge small { font-size: 7px; font-weight: 800; letter-spacing: .08em; }
 .google-play-badge strong { font-size: 16px; letter-spacing: -.03em; }
@@ -865,7 +866,11 @@ a.platform-card:hover {
   font: inherit;
   font-weight: 800;
   padding: 9px 16px;
+  transition: background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease, transform 0.16s ease;
 }
+
+.update-platform-tab:hover { color: var(--text); background: var(--surface-strong); }
+.update-platform-tab:active { transform: scale(.96); }
 
 .update-platform-tab[aria-selected="true"] {
   background: var(--accent);
@@ -893,6 +898,20 @@ a.platform-card:hover {
 .update-platform-tab:focus-visible {
   outline: 3px solid var(--ring);
   outline-offset: 2px;
+}
+
+:root[data-theme="dark"] .google-play-badge {
+  border-color: rgba(255,255,255,.72);
+  background: #101b2c;
+  color: #f4f8ff;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .google-play-badge {
+    border-color: rgba(255,255,255,.72);
+    background: #101b2c;
+    color: #f4f8ff;
+  }
 }
 
 .update-history-slot {

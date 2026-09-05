@@ -81,6 +81,7 @@ if (typeof systemTheme.addEventListener === 'function') {
 
 const contactForm = document.querySelector('[data-contact-form]');
 const appUpdateCards = document.querySelectorAll('[data-app-updates]');
+let appUpdatesPayload = null;
 
 if (contactForm) {
   contactForm.addEventListener('submit', (event) => {
@@ -271,6 +272,7 @@ const loadAppStoreUpdates = async () => {
     const response = await fetch('./assets/appstore-updates.json', { cache: 'no-store' });
     if (!response.ok) throw new Error(`Failed to load app updates: ${response.status}`);
     const payload = await response.json();
+    appUpdatesPayload = payload;
 
     appUpdateCards.forEach((card) => {
       const appKey = card.dataset.appUpdates;
@@ -315,10 +317,7 @@ appUpdateCards.forEach((card) => {
         tab.setAttribute('aria-selected', String(tab === button));
       });
       const appKey = card.dataset.appUpdates;
-      fetch('./assets/appstore-updates.json', { cache: 'no-store' })
-        .then((response) => response.json())
-        .then((payload) => renderUpdateCard(card, payload?.apps?.[appKey] || null))
-        .catch(() => {});
+      renderUpdateCard(card, appUpdatesPayload?.apps?.[appKey] || null);
       card.dispatchEvent(new CustomEvent('forge-platform-change'));
       window.setTimeout(() => card.classList.remove('platform-switching'), 260);
     });

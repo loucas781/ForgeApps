@@ -10,6 +10,8 @@
 - Updated ForgeShift Android from coming soon to released and linked its Google Play listing.
 - Added theme-aware Google Play download badges to the homepage and ForgeShift page.
 - Styled the iOS and Android history switcher as a glass segmented control with a content fade.
+- Improved store-badge theme contrast, toggle press states, and platform-switch fading.
+- Refreshed page asset versions so browsers load the latest controls immediately.
 - Added ForgeShift Android `1.0.0` as the initial release before the current `1.0.1` update.
 - Changed automatic update checks to run weekly.
 
