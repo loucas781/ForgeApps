@@ -12,6 +12,7 @@
 - Styled the iOS and Android history switcher as a glass segmented control with a content fade.
 - Improved store-badge theme contrast, toggle press states, and platform-switch fading.
 - Refreshed page asset versions so browsers load the latest controls immediately.
+- Matched Google Play badge inversion to the App Store badge in light and dark themes.
 - Added ForgeShift Android `1.0.0` as the initial release before the current `1.0.1` update.
 - Changed automatic update checks to run weekly.
 

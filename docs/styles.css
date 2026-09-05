@@ -742,8 +742,8 @@ a.platform-card:hover {
   padding: 5px 13px;
   border: 1px solid #111;
   border-radius: 7px;
-  background: #fff;
-  color: #111;
+  background: #111;
+  color: #fff;
   line-height: 1;
   text-decoration: none;
 }
@@ -901,16 +901,16 @@ a.platform-card:hover {
 }
 
 :root[data-theme="dark"] .google-play-badge {
-  border-color: rgba(255,255,255,.72);
-  background: #101b2c;
-  color: #f4f8ff;
+  border-color: #111;
+  background: #fff;
+  color: #111;
 }
 
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) .google-play-badge {
-    border-color: rgba(255,255,255,.72);
-    background: #101b2c;
-    color: #f4f8ff;
+    border-color: #111;
+    background: #fff;
+    color: #111;
   }
 }
 
