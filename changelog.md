@@ -6,6 +6,7 @@
 - Added Google Play version and release-note syncing for ForgeShift Android.
 - Preserved separate current-version and previous-release histories for each platform.
 - Updated ForgeShift Android from coming soon to released and linked its Google Play listing.
+- Added theme-aware Google Play download badges to the homepage and ForgeShift page.
 - Changed automatic update checks to run weekly.
 
 ## 2026-08-01

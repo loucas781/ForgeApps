@@ -736,6 +736,29 @@ a.platform-card:hover {
   height: auto;
 }
 
+.google-play-badge {
+  gap: 9px;
+  min-height: 40px;
+  padding: 5px 13px;
+  border: 1px solid var(--text);
+  border-radius: 7px;
+  background: var(--text);
+  color: var(--page);
+  line-height: 1;
+  text-decoration: none;
+}
+
+.google-play-badge:hover { transform: translateY(-2px); }
+.google-play-badge span:last-child { display: grid; gap: 3px; }
+.google-play-badge small { font-size: 7px; font-weight: 800; letter-spacing: .08em; }
+.google-play-badge strong { font-size: 16px; letter-spacing: -.03em; }
+.google-play-mark {
+  width: 21px;
+  height: 24px;
+  clip-path: polygon(0 0, 100% 50%, 0 100%, 22% 50%);
+  background: linear-gradient(145deg, #38d6ff 0 34%, #55df75 34% 52%, #ffd43b 52% 70%, #ff5b5b 70%);
+}
+
 .app-heading {
   display: flex;
   align-items: center;
