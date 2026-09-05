@@ -1,7 +1,7 @@
 {
   "source": "itunes-lookup",
   "country": "gb",
-  "generatedAt": "2026-09-05T15:40:05.060Z",
+  "generatedAt": "2026-09-05T15:44:13.842Z",
   "apps": {
     "payforge": {
       "key": "payforge",
@@ -240,7 +240,7 @@
           "status": "ok",
           "version": "1.0.1",
           "releaseDate": "2026-08-16T23:00:00.000Z",
-          "notes": "Initial Release",
+          "notes": "• Added server-controlled permissions for Calendar, Shifts, Tasks, Templates, Teams, Locations, Organisations and Settings.\n• Custom roles now apply the latest navigation, editing and access permissions.\n• Team and organisation rotas now show permitted colleagues in the calendar.\n• Improved scoped shift editing, task assignments and team visibility.\n• Hidden inactive accounts from team, calendar and shift-assignment lists.\n• Improved support for new server flags and older ForgeShift servers.",
           "appStoreUrl": "https://play.google.com/store/apps/details?id=con.loucas781.forgeshift",
           "previousVersion": "1.0.1",
           "hasUpdate": false,
@@ -248,11 +248,24 @@
             {
               "version": "1.0.1",
               "releaseDate": "2026-08-16T23:00:00.000Z",
+              "notes": "• Added server-controlled permissions for Calendar, Shifts, Tasks, Templates, Teams, Locations, Organisations and Settings.\n• Custom roles now apply the latest navigation, editing and access permissions.\n• Team and organisation rotas now show permitted colleagues in the calendar.\n• Improved scoped shift editing, task assignments and team visibility.\n• Hidden inactive accounts from team, calendar and shift-assignment lists.\n• Improved support for new server flags and older ForgeShift servers.",
+              "appStoreUrl": "https://play.google.com/store/apps/details?id=con.loucas781.forgeshift"
+            },
+            {
+              "version": "1.0.0",
+              "releaseDate": null,
               "notes": "Initial Release",
               "appStoreUrl": "https://play.google.com/store/apps/details?id=con.loucas781.forgeshift"
             }
           ],
-          "previousUpdates": []
+          "previousUpdates": [
+            {
+              "version": "1.0.0",
+              "releaseDate": null,
+              "notes": "Initial Release",
+              "appStoreUrl": "https://play.google.com/store/apps/details?id=con.loucas781.forgeshift"
+            }
+          ]
         }
       }
     },

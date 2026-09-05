@@ -43,7 +43,7 @@ const toIsoDate = (value) => {
   return date.toISOString();
 };
 
-const isInitialReleaseVersion = (version) => /^1\.0(?:\.0|\.1)?$/.test(String(version || '').trim());
+const isInitialReleaseVersion = (version) => /^1\.0\.0$/.test(String(version || '').trim());
 
 const releaseNotesFor = (version, notes) => {
   if (isInitialReleaseVersion(version)) return 'Initial Release';
@@ -204,6 +204,15 @@ const run = async () => {
   const androidLatest = await fetchAndroidAppData(androidConfig);
   const androidPrior = prior?.apps?.forgeshift?.platforms?.android || prior?.apps?.forgeshift?.android || null;
   const androidHistory = mergeReleaseHistory(androidLatest, androidPrior);
+  if (androidLatest.version === '1.0.1' && !androidHistory.some((release) => release.version === '1.0.0')) {
+    androidHistory.push({
+      version: '1.0.0',
+      releaseDate: null,
+      notes: 'Initial Release',
+      appStoreUrl: androidLatest.appStoreUrl
+    });
+    androidHistory.sort(sortReleasesNewestFirst);
+  }
   const forgeshift = latestApps.find((app) => app.key === 'forgeshift');
   if (forgeshift) {
     forgeshift.platforms = {
