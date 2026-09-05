@@ -21,6 +21,11 @@ const releaseNotesFor = (version, notes) => {
   return notes || 'No release notes were provided for this version.';
 };
 
+const getPlatformData = (appData, platform) => {
+  if (platform === 'android') return appData?.platforms?.android || appData?.android || null;
+  return appData?.platforms?.ios || appData;
+};
+
 const sortReleasesNewestFirst = (a, b) => {
   const aTime = a?.releaseDate ? new Date(a.releaseDate).getTime() : 0;
   const bTime = b?.releaseDate ? new Date(b.releaseDate).getTime() : 0;
@@ -78,13 +83,14 @@ const renderUpdateHistory = (element, appData, backfilledReleaseHistory = []) =>
 
   history.replaceChildren();
 
-  const releases = mergeReleaseHistory(appData, backfilledReleaseHistory);
-  if (!appData || appData.status === 'missing_app_id' || releases.length === 0) {
+  const platformData = getPlatformData(appData, element.dataset.selectedPlatform || 'ios');
+  const releases = mergeReleaseHistory(platformData, backfilledReleaseHistory);
+  if (!platformData || platformData.status === 'missing_app_id' || releases.length === 0) {
     history.hidden = true;
     return;
   }
 
-  const currentIdentity = releaseIdentity(currentReleaseFromApp(appData));
+  const currentIdentity = releaseIdentity(currentReleaseFromApp(platformData));
   const previousUpdates = releases.filter((release) => releaseIdentity(release) !== currentIdentity);
   history.hidden = false;
 
@@ -144,7 +150,11 @@ const loadUpdateHistory = async () => {
 
     updateHistoryCards.forEach((card) => {
       const appKey = card.dataset.appUpdates;
-      renderUpdateHistory(card, updatesPayload?.apps?.[appKey] || null, historyPayload?.apps?.[appKey] || []);
+      const getBackfilledHistory = () => card.dataset.selectedPlatform === 'android' ? [] : historyPayload?.apps?.[appKey] || [];
+      renderUpdateHistory(card, updatesPayload?.apps?.[appKey] || null, getBackfilledHistory());
+      card.addEventListener('forge-platform-change', () => {
+        renderUpdateHistory(card, updatesPayload?.apps?.[appKey] || null, getBackfilledHistory());
+      });
     });
   } catch (error) {
     updateHistoryCards.forEach((card) => {

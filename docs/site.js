@@ -126,6 +126,11 @@ const releaseNotesFor = (version, notes) => {
   return notes || 'No release notes were provided for this version.';
 };
 
+const getPlatformData = (appData, platform) => {
+  if (platform === 'android') return appData?.platforms?.android || appData?.android || null;
+  return appData?.platforms?.ios || appData;
+};
+
 const releaseIdentity = (release) => {
   if (!release) return '';
   return [release.version || '', release.releaseDate || ''].join('|');
@@ -141,12 +146,14 @@ const currentReleaseFromApp = (appData) => {
   };
 };
 
-const getPreviousUpdates = (appData) => {
-  if (Array.isArray(appData?.previousUpdates)) return appData.previousUpdates.filter((release) => release?.version);
+const getPreviousUpdates = (appData, platform = 'ios') => {
+  const platformData = getPlatformData(appData, platform);
+  if (!platformData) return [];
+  if (Array.isArray(platformData.previousUpdates)) return platformData.previousUpdates.filter((release) => release?.version);
 
-  const currentRelease = currentReleaseFromApp(appData);
+  const currentRelease = currentReleaseFromApp(platformData);
   const currentIdentity = releaseIdentity(currentRelease);
-  return (Array.isArray(appData?.releaseHistory) ? appData.releaseHistory : [])
+  return (Array.isArray(platformData.releaseHistory) ? platformData.releaseHistory : [])
     .filter((release) => release?.version && releaseIdentity(release) !== currentIdentity);
 };
 
@@ -174,7 +181,9 @@ const renderUpdateHistory = (element, appData) => {
   const details = document.createElement('details');
   details.className = 'update-history';
 
-  const previousUpdates = getPreviousUpdates(appData);
+  const platform = element.dataset.selectedPlatform || 'ios';
+  const previousUpdates = getPreviousUpdates(appData, platform);
+  const storeName = platform === 'android' ? 'Google Play' : 'App Store';
   const summaryText = previousUpdates.length === 1
     ? 'Previous update'
     : `Previous updates${previousUpdates.length > 0 ? ` (${previousUpdates.length})` : ''}`;
@@ -184,7 +193,7 @@ const renderUpdateHistory = (element, appData) => {
   list.className = 'update-history-list';
 
   if (previousUpdates.length === 0) {
-    appendText(list, 'p', 'update-history-empty', 'Previous App Store updates will appear here after a newer version is detected.');
+    appendText(list, 'p', 'update-history-empty', `Previous ${storeName} updates will appear here after a newer version is detected.`);
   } else {
     previousUpdates.forEach((release) => {
       const item = document.createElement('article');
@@ -213,6 +222,9 @@ const renderUpdateHistory = (element, appData) => {
 };
 
 const renderUpdateCard = (element, appData) => {
+  const platform = element.dataset.selectedPlatform || 'ios';
+  const platformData = getPlatformData(appData, platform);
+  const storeName = platform === 'android' ? 'Google Play' : 'App Store';
   const title = element.querySelector('[data-update-title]');
   const version = element.querySelector('[data-update-version]');
   const date = element.querySelector('[data-update-date]');
@@ -220,34 +232,35 @@ const renderUpdateCard = (element, appData) => {
   const link = element.querySelector('[data-update-link]');
   renderUpdateHistory(element, appData);
 
-  if (!appData || appData.status === 'missing_app_id') {
-    if (title) title.textContent = 'App Store feed pending';
-    if (version) version.textContent = 'No App Store ID configured yet for this app.';
+  if (!platformData || platformData.status === 'missing_app_id') {
+    if (title) title.textContent = `${storeName} feed pending`;
+    if (version) version.textContent = platform === 'android' ? 'No Google Play package configured yet for this app.' : 'No App Store ID configured yet for this app.';
     if (date) date.textContent = '';
     if (notes) notes.textContent = 'Set the app ID in the update script to enable automatic release-note syncing.';
     if (link) link.hidden = true;
     return;
   }
 
-  if (!appData.version) {
-    if (title) title.textContent = 'App Store release pending';
-    if (version) version.textContent = 'Version details will appear here when Apple makes the listing available.';
+  if (!platformData.version) {
+    if (title) title.textContent = `${storeName} release pending`;
+    if (version) version.textContent = platform === 'android' ? 'Version details will appear here when Google Play makes the listing available.' : 'Version details will appear here when Apple makes the listing available.';
     if (date) date.textContent = '';
-    if (notes) notes.textContent = 'Release notes and previous versions are synced automatically from the App Store.';
-    if (link) link.hidden = !appData.appStoreUrl;
-    if (link && appData.appStoreUrl) link.href = appData.appStoreUrl;
+    if (notes) notes.textContent = `Release notes and previous versions are synced automatically from ${storeName}.`;
+    if (link) link.hidden = !platformData.appStoreUrl;
+    if (link && platformData.appStoreUrl) link.href = platformData.appStoreUrl;
     return;
   }
 
-  if (title) title.textContent = `Version ${appData.version}`;
-  if (version) version.textContent = appData.hasUpdate && appData.previousVersion
-    ? `Updated from ${appData.previousVersion} to ${appData.version}.`
-    : `Latest version currently listed on the App Store.`;
-  if (date) date.textContent = formatReleaseDate(appData.releaseDate) || '';
-  if (notes) notes.textContent = releaseNotesFor(appData.version, appData.notes);
-  if (link && appData.appStoreUrl) {
+  if (title) title.textContent = `Version ${platformData.version}`;
+  if (version) version.textContent = platformData.hasUpdate && platformData.previousVersion
+    ? `Updated from ${platformData.previousVersion} to ${platformData.version}.`
+    : `Latest version currently listed on ${storeName}.`;
+  if (date) date.textContent = formatReleaseDate(platformData.releaseDate) || '';
+  if (notes) notes.textContent = releaseNotesFor(platformData.version, platformData.notes);
+  if (link && platformData.appStoreUrl) {
     link.hidden = false;
-    link.href = appData.appStoreUrl;
+    link.href = platformData.appStoreUrl;
+    link.textContent = platform === 'android' ? 'View on Google Play' : 'View on App Store';
   }
 };
 
@@ -263,6 +276,9 @@ const loadAppStoreUpdates = async () => {
       const appKey = card.dataset.appUpdates;
       const appData = payload?.apps?.[appKey] || null;
       renderUpdateCard(card, appData);
+      card.querySelectorAll('[data-update-platform]').forEach((button) => {
+        button.setAttribute('aria-selected', String(button.dataset.updatePlatform === (card.dataset.selectedPlatform || 'ios')));
+      });
     });
   } catch (error) {
     appUpdateCards.forEach((card) => {
@@ -285,5 +301,23 @@ const loadAppStoreUpdates = async () => {
     });
   }
 };
+
+appUpdateCards.forEach((card) => {
+  card.dataset.selectedPlatform = 'ios';
+  card.querySelectorAll('[data-update-platform]').forEach((button) => {
+    button.addEventListener('click', () => {
+      card.dataset.selectedPlatform = button.dataset.updatePlatform || 'ios';
+      card.querySelectorAll('[data-update-platform]').forEach((tab) => {
+        tab.setAttribute('aria-selected', String(tab === button));
+      });
+      const appKey = card.dataset.appUpdates;
+      fetch('./assets/appstore-updates.json', { cache: 'no-store' })
+        .then((response) => response.json())
+        .then((payload) => renderUpdateCard(card, payload?.apps?.[appKey] || null))
+        .catch(() => {});
+      card.dispatchEvent(new CustomEvent('forge-platform-change'));
+    });
+  });
+});
 
 loadAppStoreUpdates();

@@ -1,5 +1,13 @@
 # Changelog
 
+## 2026-09-05
+
+- Added separate iOS and Android update-history tabs for ForgeShift.
+- Added Google Play version and release-note syncing for ForgeShift Android.
+- Preserved separate current-version and previous-release histories for each platform.
+- Updated ForgeShift Android from coming soon to released and linked its Google Play listing.
+- Changed automatic update checks to run weekly.
+
 ## 2026-08-01
 
 - Modernised the shared platform and application page presentation.

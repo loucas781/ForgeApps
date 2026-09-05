@@ -822,6 +822,38 @@ a.platform-card:hover {
   white-space: pre-line;
 }
 
+.update-platform-tabs {
+  display: inline-flex;
+  gap: 4px;
+  margin: 2px 0 14px;
+  padding: 4px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--surface-soft);
+}
+
+.update-platform-tab {
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+  font: inherit;
+  font-weight: 800;
+  padding: 9px 16px;
+}
+
+.update-platform-tab[aria-selected="true"] {
+  background: var(--surface-strong);
+  color: var(--text);
+  box-shadow: var(--shadow-soft), inset 0 1px 0 rgba(255,255,255,0.22);
+}
+
+.update-platform-tab:focus-visible {
+  outline: 3px solid var(--ring);
+  outline-offset: 2px;
+}
+
 .update-history-slot {
   margin: 16px 0;
 }

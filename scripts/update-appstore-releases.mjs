@@ -27,6 +27,12 @@ const APPS = [
     name: 'WatchCue',
     appId: '6790001201',
     fallbackStoreUrl: 'https://apps.apple.com/us/app/watchcue/id6790001201'
+  },
+  {
+    key: 'forgeshift_android',
+    name: 'ForgeShift Android',
+    packageName: 'con.loucas781.forgeshift',
+    fallbackStoreUrl: 'https://play.google.com/store/apps/details?id=con.loucas781.forgeshift'
   }
 ];
 
@@ -43,6 +49,16 @@ const releaseNotesFor = (version, notes) => {
   if (isInitialReleaseVersion(version)) return 'Initial Release';
   return notes || null;
 };
+
+const decodeHtml = (value) => String(value || '')
+  .replace(/\\u003c/g, '<')
+  .replace(/\\u003e/g, '>')
+  .replace(/<br\s*\/?>(?:\n)?/gi, '\n')
+  .replace(/<[^>]+>/g, '')
+  .replace(/&amp;/g, '&')
+  .replace(/&quot;/g, '"')
+  .replace(/&#39;/g, "'")
+  .trim();
 
 const releaseIdentity = (release) => {
   if (!release?.version) return null;
@@ -92,6 +108,7 @@ const mergeReleaseHistory = (latest, priorApp) => {
 };
 
 const fetchAppData = async (app) => {
+  if (app.packageName) return fetchAndroidAppData(app);
   if (!app.appId) {
     return {
       key: app.key,
@@ -142,12 +159,37 @@ const fetchAppData = async (app) => {
   };
 };
 
+const fetchAndroidAppData = async (app) => {
+  const url = `https://play.google.com/store/apps/details?id=${encodeURIComponent(app.packageName)}&hl=en_GB&gl=GB`;
+  const response = await fetch(url, { headers: { Accept: 'text/html' } });
+  if (!response.ok) throw new Error(`Google Play lookup failed for ${app.key} (${response.status})`);
+
+  const html = await response.text();
+  const version = /"141":\[\[\["([^"]+)"\]\]/.exec(html)?.[1] || null;
+  const notesMatch = /"145":\[null,\[null,"((?:\\.|[^"\\])*)"\]\]/.exec(html);
+  const notes = notesMatch?.[1] ? decodeHtml(notesMatch[1]) : null;
+  const updatedMatch = /Updated on<\/div><div[^>]*>([^<]+)<\/div>/.exec(html);
+  const releaseDate = updatedMatch?.[1] ? toIsoDate(updatedMatch[1]) : null;
+
+  return {
+    key: app.key,
+    name: app.name,
+    packageName: app.packageName,
+    status: version ? 'ok' : 'not_found',
+    version,
+    releaseDate,
+    notes: releaseNotesFor(version, notes),
+    appStoreUrl: app.fallbackStoreUrl
+  };
+};
+
 const run = async () => {
   const priorRaw = await readFile(OUTPUT_PATH, 'utf8').catch(() => null);
   const prior = priorRaw ? JSON.parse(priorRaw) : null;
 
   const latestApps = [];
   for (const app of APPS) {
+    if (app.packageName) continue;
     const latest = await fetchAppData(app);
     const priorApp = prior?.apps?.[app.key] || null;
     const priorVersion = priorApp?.version || null;
@@ -156,6 +198,34 @@ const run = async () => {
     latest.releaseHistory = mergeReleaseHistory(latest, priorApp);
     latest.previousUpdates = latest.releaseHistory.slice(1);
     latestApps.push(latest);
+  }
+
+  const androidConfig = APPS.find((app) => app.packageName);
+  const androidLatest = await fetchAndroidAppData(androidConfig);
+  const androidPrior = prior?.apps?.forgeshift?.platforms?.android || prior?.apps?.forgeshift?.android || null;
+  const androidHistory = mergeReleaseHistory(androidLatest, androidPrior);
+  const forgeshift = latestApps.find((app) => app.key === 'forgeshift');
+  if (forgeshift) {
+    forgeshift.platforms = {
+      ...(forgeshift.platforms || {}),
+      ios: {
+        version: forgeshift.version,
+        releaseDate: forgeshift.releaseDate,
+        notes: forgeshift.notes,
+        appStoreUrl: forgeshift.appStoreUrl,
+        previousVersion: forgeshift.previousVersion,
+        hasUpdate: forgeshift.hasUpdate,
+        releaseHistory: forgeshift.releaseHistory,
+        previousUpdates: forgeshift.previousUpdates
+      },
+      android: {
+        ...androidLatest,
+        previousVersion: androidPrior?.version || null,
+        hasUpdate: Boolean(androidLatest.version && androidPrior?.version && androidLatest.version !== androidPrior.version),
+        releaseHistory: androidHistory,
+        previousUpdates: androidHistory.slice(1)
+      }
+    };
   }
 
   const payload = {
