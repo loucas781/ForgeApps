@@ -1,7 +1,7 @@
 {
   "source": "itunes-lookup",
   "country": "gb",
-  "generatedAt": "2026-09-05T16:17:00.578Z",
+  "generatedAt": "2026-09-06T11:01:23.986Z",
   "apps": {
     "payforge": {
       "key": "payforge",
@@ -242,8 +242,8 @@
           "releaseDate": "2026-09-02T00:00:00.000Z",
           "notes": "• Matched absent-day colour dots to the neutral Annual Leave / Day Off colour.\n• Added an Absent / Sick day status alongside Annual Leave.\n• Absent days appear as all-day entries and can be created or edited natively.",
           "appStoreUrl": "https://play.google.com/store/apps/details?id=con.loucas781.forgeshift",
-          "previousVersion": "1.0.1",
-          "hasUpdate": true,
+          "previousVersion": "1.0.2",
+          "hasUpdate": false,
           "releaseHistory": [
             {
               "version": "1.0.2",
