@@ -1,7 +1,7 @@
 {
   "source": "itunes-lookup",
   "country": "gb",
-  "generatedAt": "2026-09-09T07:28:57.367Z",
+  "generatedAt": "2026-09-13T11:57:11.191Z",
   "apps": {
     "payforge": {
       "key": "payforge",
@@ -304,8 +304,8 @@
       "releaseDate": "2026-09-08T17:11:55.000Z",
       "notes": "• Keep your Library and viewing progress in sync across devices with iCloud.\n• Create a public profile, choose what to share and connect with other WatchCue users.\n• Discover shows and movies more easily with improved search and browsing.\n• See more useful viewing statistics and progress at a glance.\n• Set release reminders, receive digests and use WatchCue widgets.\n• Manage your Library faster with bulk actions and smoother episode check-offs.\n• Personalise your profile with a display name and cropped profile photo.\n• Enjoy more reliable artwork, navigation, tab switching and social features.\n• Includes additional stability and performance improvements.",
       "appStoreUrl": "https://apps.apple.com/gb/app/watchcue/id6790001201?uo=4",
-      "previousVersion": "1.3.0",
-      "hasUpdate": true,
+      "previousVersion": "1.4.0",
+      "hasUpdate": false,
       "releaseHistory": [
         {
           "version": "1.4.0",
