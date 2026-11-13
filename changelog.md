@@ -2,6 +2,8 @@
 
 ## 2026-11-13
 
+- Rebranded the navigation home control with the official Louis Birch portfolio logo while preserving all existing app page URLs.
+- Tightened the navigation bar spacing and improved small-screen navigation so the header stays compact and usable.
 - Added a dedicated Fruit Squash page to the Louis Birch Studio portfolio, with live App Store and Google Play links.
 - Added Fruit Squash to the weekly store update workflow, including full App Store version-history backfill and Google Play version tracking.
 - Added a store selector so players can switch between Fruit Squash iOS and Android release notes and previous updates.
