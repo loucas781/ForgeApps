@@ -2,6 +2,7 @@
 
 ## 2026-11-13
 
+- Fixed the Fruit Squash hero icon sizing so it stays square and fully visible across screen sizes.
 - Created clean directory URLs for the Forge Apps collection and all app, support, and legal pages, while retaining legacy `.html` addresses as redirects.
 - Refocused the home page on the full Louis Birch Studio portfolio and limited the Forge Apps hub to PayForge, ForgeShift, and ForgeTrack.
 - Added the authentic Fruit Squash app icon to its dedicated page and the portfolio overview.

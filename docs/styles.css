@@ -691,6 +691,8 @@ a.platform-card:hover {
 .fruit-squash-app-icon {
   display: block;
   width: clamp(210px, 28vw, 310px);
+  max-width: 100%;
+  height: auto;
   aspect-ratio: 1;
   border-radius: 22.5%;
   object-fit: cover;
