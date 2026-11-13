@@ -2,6 +2,9 @@
 
 ## 2026-11-13
 
+- Added a dedicated Forge Apps collection page linking to the existing PayForge, ForgeShift, and ForgeTrack detail pages.
+- Replaced the Forge Apps home-page anchor in navigation with the new page route to prevent unexpected in-page scrolling.
+- Simplified the global navigation so WatchCue and Fruit Squash remain separate portfolio destinations.
 - Rebranded the navigation home control with the official Louis Birch portfolio logo while preserving all existing app page URLs.
 - Tightened the navigation bar spacing and improved small-screen navigation so the header stays compact and usable.
 - Added a dedicated Fruit Squash page to the Louis Birch Studio portfolio, with live App Store and Google Play links.

@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Forge Apps | Louis Birch Studio</title>
+  <meta name="description" content="Explore PayForge, ForgeShift, and ForgeTrack, a collection of focused software for work, pay, and planning by Louis Birch." />
+  <script>
+    (function () {
+      try {
+        var theme = localStorage.getItem('forge-theme') || 'system';
+        if (theme !== 'system') document.documentElement.dataset.theme = theme;
+      } catch (error) {}
+    })();
+  </script>
+  <link rel="stylesheet" href="./styles.css?v=20261113-5" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="site-shell">
+    <nav class="navbar glass" aria-label="Main navigation">
+      <a class="brand" href="https://louisbirch.co.uk/" aria-label="Visit Louis Birch portfolio home"><img class="brand-mark" src="./assets/louis-birch-logo.png" alt="" width="58" height="38" /><span class="brand-copy"><strong>Louis Birch</strong><small>Software studio</small></span></a>
+      <div class="nav-actions">
+        <div class="nav-links">
+          <a href="./">Home</a>
+          <a href="./forgeapps.html" aria-current="page">Forge Apps</a>
+          <a href="./watchcue.html">WatchCue</a>
+          <a href="./fruit-squash.html">Fruit Squash</a>
+          <a href="./contact.html">Contact</a>
+        </div>
+        <div class="theme-switcher" role="group" aria-label="Theme preference">
+          <button type="button" data-theme-choice="system" aria-pressed="true" aria-label="Use system theme"><span aria-hidden="true">S</span><span class="sr-only">System</span></button>
+          <button type="button" data-theme-choice="light" aria-pressed="false" aria-label="Use light theme"><span aria-hidden="true">L</span><span class="sr-only">Light</span></button>
+          <button type="button" data-theme-choice="dark" aria-pressed="false" aria-label="Use dark theme"><span aria-hidden="true">D</span><span class="sr-only">Dark</span></button>
+        </div>
+      </div>
+    </nav>
+
+    <main id="main">
+      <header class="hero compact glass">
+        <p class="eyebrow">A focused software collection</p>
+        <h1>Forge Apps</h1>
+        <p class="subtitle">Three independent tools for pay, shift planning, and work tracking. Choose an app to explore its features, platform links, support details, and release history.</p>
+      </header>
+
+      <section class="section glass" aria-label="Forge Apps products">
+        <div class="grid">
+          <article class="product-card tile">
+            <div class="product-icon"><img src="./assets/payforge-icon.png" data-light-src="./assets/payforge-icon.png" data-dark-src="./assets/payforge-icon-dark.png" data-theme-icon alt="PayForge app icon" width="64" height="64" /></div>
+            <p class="eyebrow">Pay estimation</p>
+            <h2>PayForge</h2>
+            <p>Estimate take-home pay with salary, shift, tax, and quick calculation tools.</p>
+            <div class="product-actions">
+              <a class="store-link" href="https://apps.apple.com/gb/app/payforge/id6766063577?uo=4" target="_blank" rel="noopener noreferrer" aria-label="Download PayForge on the App Store"><img class="store-badge" src="./assets/app-store-badge-black.svg" data-light-src="./assets/app-store-badge-black.svg" data-dark-src="./assets/app-store-badge-white.svg" data-theme-icon alt="Download PayForge on the App Store" width="120" height="40" /></a>
+              <a class="btn" href="./payforge.html">PayForge details</a>
+            </div>
+          </article>
+
+          <article class="product-card tile">
+            <div class="product-icon"><img src="./assets/forgeshift-icon.png" data-light-src="./assets/forgeshift-icon.png" data-dark-src="./assets/forgeshift-icon-dark.png" data-theme-icon alt="ForgeShift app icon" width="64" height="64" /></div>
+            <p class="eyebrow">Shift planning</p>
+            <h2>ForgeShift</h2>
+            <p>Plan and review shifts with pay-aware scheduling on web, iOS, and Android.</p>
+            <div class="product-actions">
+              <a class="store-link" href="https://apps.apple.com/gb/app/forgeshift/id6762021609?uo=4" target="_blank" rel="noopener noreferrer" aria-label="Download ForgeShift on the App Store"><img class="store-badge" src="./assets/app-store-badge-black.svg" data-light-src="./assets/app-store-badge-black.svg" data-dark-src="./assets/app-store-badge-white.svg" data-theme-icon alt="Download ForgeShift on the App Store" width="120" height="40" /></a>
+              <a class="store-link google-play-badge" href="https://play.google.com/store/apps/details?id=con.loucas781.forgeshift" target="_blank" rel="noopener noreferrer" aria-label="Get ForgeShift on Google Play"><span class="google-play-mark" aria-hidden="true"></span><span><small>GET IT ON</small><strong>Google Play</strong></span></a>
+              <a class="btn" href="./forgeshift.html">ForgeShift details</a>
+            </div>
+          </article>
+
+          <article class="product-card tile">
+            <div class="product-icon"><img src="./assets/forgetrack-icon.png" data-light-src="./assets/forgetrack-icon.png" data-dark-src="./assets/forgetrack-icon-dark.png" data-theme-icon alt="ForgeTrack app icon" width="64" height="64" /></div>
+            <p class="eyebrow">Workflow tracking</p>
+            <h2>ForgeTrack</h2>
+            <p>Keep recurring work, activity, and useful workflow signals organised.</p>
+            <div class="product-actions">
+              <a class="btn" href="./forgetrack.html">ForgeTrack details</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section glass section-header">
+        <div><p class="eyebrow">Beyond Forge Apps</p><h2>More from the studio.</h2></div>
+        <div class="actions">
+          <a class="btn" href="./watchcue.html">Explore WatchCue</a>
+          <a class="btn" href="./fruit-squash.html">Explore Fruit Squash</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <span>&copy; 2026 Louis Birch <span class="footer-note">Independent software · Forge Apps · WatchCue · Fruit Squash</span></span>
+      <span><a href="./privacy.html">Privacy</a> &middot; <a href="./terms.html">Terms</a> &middot; <a href="./contact.html">Contact</a></span>
+    </footer>
+  </div>
+  <script src="./site.js?v=20261113-5"></script>
+</body>
+</html>
