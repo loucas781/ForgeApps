@@ -29,10 +29,24 @@ const APPS = [
     fallbackStoreUrl: 'https://apps.apple.com/us/app/watchcue/id6790001201'
   },
   {
+    key: 'fruit_squash',
+    name: 'Fruit Squash',
+    appId: '6475038483',
+    fallbackStoreUrl: 'https://apps.apple.com/gb/app/fruit-squash/id6475038483'
+  },
+  {
     key: 'forgeshift_android',
     name: 'ForgeShift Android',
+    parentKey: 'forgeshift',
     packageName: 'con.loucas781.forgeshift',
     fallbackStoreUrl: 'https://play.google.com/store/apps/details?id=con.loucas781.forgeshift'
+  },
+  {
+    key: 'fruit_squash_android',
+    name: 'Fruit Squash Android',
+    parentKey: 'fruit_squash',
+    packageName: 'com.louis.fruitcsquashpaid',
+    fallbackStoreUrl: 'https://play.google.com/store/apps/details?id=com.louis.fruitcsquashpaid'
   }
 ];
 
@@ -200,45 +214,52 @@ const run = async () => {
     latestApps.push(latest);
   }
 
-  const androidConfig = APPS.find((app) => app.packageName);
-  const androidLatest = await fetchAndroidAppData(androidConfig);
-  const androidPrior = prior?.apps?.forgeshift?.platforms?.android || prior?.apps?.forgeshift?.android || null;
-  const androidHistory = mergeReleaseHistory(androidLatest, androidPrior);
-  if (androidLatest.version === '1.0.1' && !androidHistory.some((release) => release.version === '1.0.0')) {
-    androidHistory.push({
-      version: '1.0.0',
-      releaseDate: null,
-      notes: 'Initial Release',
-      appStoreUrl: androidLatest.appStoreUrl
-    });
-    androidHistory.sort(sortReleasesNewestFirst);
-  }
-  const forgeshift = latestApps.find((app) => app.key === 'forgeshift');
-  if (forgeshift) {
-    forgeshift.platforms = {
-      ...(forgeshift.platforms || {}),
-      ios: {
-        version: forgeshift.version,
-        releaseDate: forgeshift.releaseDate,
-        notes: forgeshift.notes,
-        appStoreUrl: forgeshift.appStoreUrl,
-        previousVersion: forgeshift.previousVersion,
-        hasUpdate: forgeshift.hasUpdate,
-        releaseHistory: forgeshift.releaseHistory,
-        previousUpdates: forgeshift.previousUpdates
-      },
-      android: {
-        ...androidLatest,
-        previousVersion: androidPrior?.version || null,
-        hasUpdate: Boolean(androidLatest.version && androidPrior?.version && androidLatest.version !== androidPrior.version),
-        releaseHistory: androidHistory,
-        previousUpdates: androidHistory.slice(1)
-      }
+  for (const androidConfig of APPS.filter((app) => app.packageName)) {
+    const androidLatest = await fetchAndroidAppData(androidConfig);
+    const parent = latestApps.find((app) => app.key === androidConfig.parentKey);
+    if (!parent) continue;
+
+    const priorParent = prior?.apps?.[androidConfig.parentKey] || null;
+    const androidPrior = priorParent?.platforms?.android || priorParent?.android || null;
+    const androidHistory = mergeReleaseHistory(androidLatest, androidPrior);
+    if (androidConfig.key === 'forgeshift_android' && androidLatest.version === '1.0.1' && !androidHistory.some((release) => release.version === '1.0.0')) {
+      androidHistory.push({
+        version: '1.0.0',
+        releaseDate: null,
+        notes: 'Initial Release',
+        appStoreUrl: androidLatest.appStoreUrl
+      });
+      androidHistory.sort(sortReleasesNewestFirst);
+    }
+
+    const androidPlatform = {
+      ...androidLatest,
+      previousVersion: androidPrior?.version || null,
+      hasUpdate: Boolean(androidLatest.version && androidPrior?.version && androidLatest.version !== androidPrior.version),
+      releaseHistory: androidHistory,
+      previousUpdates: androidHistory.slice(1)
+    };
+
+    parent.platforms = {
+      ...(parent.platforms || {}),
+      ...(androidConfig.parentKey === 'forgeshift' ? {
+        ios: {
+          version: parent.version,
+          releaseDate: parent.releaseDate,
+          notes: parent.notes,
+          appStoreUrl: parent.appStoreUrl,
+          previousVersion: parent.previousVersion,
+          hasUpdate: parent.hasUpdate,
+          releaseHistory: parent.releaseHistory,
+          previousUpdates: parent.previousUpdates
+        }
+      } : {}),
+      android: androidPlatform
     };
   }
 
   const payload = {
-    source: 'itunes-lookup',
+    source: 'app-store-and-google-play',
     country: COUNTRY,
     generatedAt: new Date().toISOString(),
     apps: Object.fromEntries(latestApps.map((app) => [app.key, app]))

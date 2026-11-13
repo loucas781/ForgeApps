@@ -1,4 +1,4 @@
-name: Sync App Store Updates
+name: Sync App Store and Google Play Updates
 
 on:
   schedule:
@@ -20,7 +20,7 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Refresh App Store metadata
+      - name: Refresh store metadata
         env:
           APP_STORE_COUNTRY: gb
         run: |
@@ -37,5 +37,5 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add docs/assets/appstore-updates.json docs/assets/appstore-release-history.json
-          git commit -m "chore: sync App Store release notes"
+          git commit -m "chore: sync store release notes"
           git push

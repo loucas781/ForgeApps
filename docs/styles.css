@@ -201,6 +201,7 @@ body::before {
   font-weight: 800;
   text-decoration: none;
   letter-spacing: -0.02em;
+  flex: 0 0 auto;
 }
 
 .brand-mark {
@@ -212,6 +213,28 @@ body::before {
   border-radius: 14px;
   background: linear-gradient(145deg, var(--surface-strong), var(--surface-soft));
   box-shadow: inset 0 1px 0 rgba(255,255,255,0.45), var(--shadow-soft);
+  color: var(--accent);
+  font-size: 0.76rem;
+  letter-spacing: -0.06em;
+}
+
+.brand-copy {
+  display: grid;
+  gap: 2px;
+  line-height: 1;
+}
+
+.brand-copy strong {
+  font-size: 0.96rem;
+  letter-spacing: -0.035em;
+}
+
+.brand-copy small {
+  color: var(--muted);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.075em;
+  text-transform: uppercase;
 }
 
 .nav-links {
@@ -372,6 +395,13 @@ body::before {
   padding: clamp(28px, 5vw, 56px);
   align-items: center;
 }
+
+.hero:not(.compact) h1 {
+  max-width: 660px;
+  font-size: clamp(2.8rem, 6.4vw, 5.6rem);
+}
+
+#forge-apps { scroll-margin-top: 24px; }
 
 .hero.compact {
   grid-template-columns: 1fr;
@@ -627,6 +657,108 @@ a.platform-card:hover {
   gap: clamp(24px, 6vw, 72px);
   align-items: center;
   min-height: 390px;
+}
+
+.fruit-squash-showcase {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(240px, 0.8fr);
+  gap: clamp(24px, 6vw, 72px);
+  align-items: center;
+  min-height: 360px;
+  background:
+    radial-gradient(circle at 82% 52%, color-mix(in srgb, #ff9f43 22%, transparent), transparent 20rem),
+    linear-gradient(145deg, var(--surface-strong), var(--surface));
+}
+
+.fruit-squash-copy { max-width: 680px; }
+
+.fruit-squash-hero {
+  grid-template-columns: minmax(0, 1.05fr) minmax(260px, 0.95fr);
+  min-height: 500px;
+  background:
+    radial-gradient(circle at 84% 48%, color-mix(in srgb, #ff9f43 22%, transparent), transparent 22rem),
+    linear-gradient(145deg, var(--surface-strong), var(--surface));
+}
+
+.game-status-note {
+  margin: 18px 0 0;
+  color: var(--muted);
+  font-weight: 700;
+}
+
+.portfolio-link {
+  display: block;
+  color: var(--text);
+  text-decoration: none;
+  transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
+
+.portfolio-link:hover {
+  border-color: var(--accent-border);
+  background: var(--accent-soft);
+  transform: translateY(-2px);
+}
+
+.portfolio-link p { margin-bottom: 0; }
+
+.fruit-art {
+  position: relative;
+  display: grid;
+  min-height: 270px;
+  place-items: center;
+  isolation: isolate;
+}
+
+.fruit-orb {
+  position: absolute;
+  display: block;
+  width: clamp(96px, 13vw, 144px);
+  aspect-ratio: 1;
+  border: 1px solid rgba(255,255,255,0.45);
+  border-radius: 44% 56% 58% 42% / 46% 44% 56% 54%;
+  box-shadow: inset -12px -16px 24px rgba(20,30,50,0.2), inset 10px 12px 22px rgba(255,255,255,0.32), 0 28px 54px rgba(0,0,0,0.2);
+}
+
+.fruit-orb::before {
+  position: absolute;
+  top: 8%;
+  right: 25%;
+  width: 20%;
+  height: 13%;
+  border-radius: 100% 0 100% 0;
+  background: #6ed47c;
+  content: "";
+  transform: rotate(-28deg);
+}
+
+.fruit-orb-citrus {
+  z-index: 1;
+  background: radial-gradient(circle at 32% 26%, #fff29a, #ffb638 46%, #fa7b28 100%);
+  transform: translate(-55px, -24px) rotate(-14deg);
+}
+
+.fruit-orb-berry {
+  z-index: 2;
+  background: radial-gradient(circle at 32% 24%, #ffc0a8, #f65f70 48%, #bd285f 100%);
+  transform: translate(47px, -2px) rotate(16deg);
+}
+
+.fruit-orb-lime {
+  z-index: 0;
+  width: clamp(84px, 11vw, 122px);
+  background: radial-gradient(circle at 32% 24%, #e4ff8d, #93d94c 48%, #3aab68 100%);
+  transform: translate(-15px, 70px) rotate(11deg);
+}
+
+.fruit-splash {
+  position: absolute;
+  z-index: -1;
+  width: min(94%, 350px);
+  aspect-ratio: 1;
+  border: 1px solid color-mix(in srgb, var(--accent-3) 60%, transparent);
+  border-radius: 50%;
+  box-shadow: 0 0 0 24px color-mix(in srgb, var(--accent-3) 7%, transparent), 0 0 0 54px color-mix(in srgb, var(--accent-2) 5%, transparent);
+  transform: scaleY(0.56) rotate(-18deg);
 }
 
 .watchcue-copy {
@@ -1083,6 +1215,13 @@ textarea:focus {
   font-size: 0.95rem;
 }
 
+.footer-note {
+  display: block;
+  margin-top: 5px;
+  font-size: 0.78rem;
+  letter-spacing: 0.015em;
+}
+
 .footer a,
 a { color: var(--accent); }
 
@@ -1093,7 +1232,9 @@ a { color: var(--accent); }
   .nav-links { justify-content: flex-start; }
   .hero,
   .split,
-  .watchcue-showcase { grid-template-columns: 1fr; }
+  .watchcue-showcase,
+  .fruit-squash-showcase { grid-template-columns: 1fr; }
+  .fruit-squash-hero { grid-template-columns: 1fr; }
   .hero { min-height: auto; }
   .grid,
   .feature-grid,
@@ -1103,6 +1244,7 @@ a { color: var(--accent); }
   .form-row { grid-template-columns: 1fr; }
   .footer { flex-direction: column; }
   .watchcue-showcase { min-height: 0; }
+  .fruit-squash-showcase { min-height: 0; }
 }
 
 @media (max-width: 560px) {

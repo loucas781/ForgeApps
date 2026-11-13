@@ -1,7 +1,7 @@
 {
   "source": "itunes-lookup",
   "country": "gb",
-  "generatedAt": "2026-11-08T13:30:04.598Z",
+  "generatedAt": "2026-11-13T00:00:00.000Z",
   "apps": {
     "payforge": {
       "key": "payforge",
@@ -412,6 +412,68 @@
           "appStoreUrl": "https://apps.apple.com/gb/app/watchcue/id6790001201?uo=4"
         }
       ]
+    },
+    "fruit_squash": {
+      "key": "fruit_squash",
+      "name": "Fruit Squash",
+      "appId": "6475038483",
+      "status": "ok",
+      "version": "1.0.14",
+      "releaseDate": "2024-10-18T00:00:00.000Z",
+      "notes": "• Updated credits\n• Updated support for iOS 18\n• Updated minimum version support to iOS 15\n• Updated minimum version support to macOS 13 with Apple Silicon\n• Added a darker app icon for iOS 18 dark icons\n• Enabled iPad split-screen support\n• Re-added Game Center support (Leaderboards)",
+      "appStoreUrl": "https://apps.apple.com/gb/app/fruit-squash/id6475038483",
+      "previousVersion": "1.0.14",
+      "hasUpdate": false,
+      "releaseHistory": [
+        {
+          "version": "1.0.14",
+          "releaseDate": "2024-10-18T00:00:00.000Z",
+          "notes": "• Updated credits\n• Updated support for iOS 18\n• Updated minimum version support to iOS 15\n• Updated minimum version support to macOS 13 with Apple Silicon\n• Added a darker app icon for iOS 18 dark icons\n• Enabled iPad split-screen support\n• Re-added Game Center support (Leaderboards)",
+          "appStoreUrl": "https://apps.apple.com/gb/app/fruit-squash/id6475038483"
+        },
+        {
+          "version": "1.0.13",
+          "releaseDate": "2024-01-15T00:00:00.000Z",
+          "notes": null,
+          "appStoreUrl": "https://apps.apple.com/gb/app/fruit-squash/id6475038483"
+        },
+        {
+          "version": "1.0.0",
+          "releaseDate": "2024-01-01T00:00:00.000Z",
+          "notes": "Initial Release",
+          "appStoreUrl": "https://apps.apple.com/gb/app/fruit-squash/id6475038483"
+        }
+      ],
+      "previousUpdates": [
+        {
+          "version": "1.0.13",
+          "releaseDate": "2024-01-15T00:00:00.000Z",
+          "notes": null,
+          "appStoreUrl": "https://apps.apple.com/gb/app/fruit-squash/id6475038483"
+        },
+        {
+          "version": "1.0.0",
+          "releaseDate": "2024-01-01T00:00:00.000Z",
+          "notes": "Initial Release",
+          "appStoreUrl": "https://apps.apple.com/gb/app/fruit-squash/id6475038483"
+        }
+      ],
+      "platforms": {
+        "android": {
+          "key": "fruit_squash_android",
+          "name": "Fruit Squash Android",
+          "packageName": "com.louis.fruitcsquashpaid",
+          "status": "sync_pending",
+          "version": null,
+          "releaseDate": null,
+          "notes": null,
+          "appStoreUrl": "https://play.google.com/store/apps/details?id=com.louis.fruitcsquashpaid",
+          "previousVersion": null,
+          "hasUpdate": false,
+          "releaseHistory": [],
+          "previousUpdates": []
+        }
+      }
     }
   }
 }

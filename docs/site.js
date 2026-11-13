@@ -99,7 +99,7 @@ if (contactForm) {
       `Name: ${name}`,
       `Email: ${email}`,
       `App: ${app}`,
-      `Device / iOS: ${device}`,
+      `Device / OS: ${device}`,
       '',
       'Message:',
       message
@@ -244,7 +244,9 @@ const renderUpdateCard = (element, appData) => {
 
   if (!platformData.version) {
     if (title) title.textContent = `${storeName} release pending`;
-    if (version) version.textContent = platform === 'android' ? 'Version details will appear here when Google Play makes the listing available.' : 'Version details will appear here when Apple makes the listing available.';
+    if (version) version.textContent = platformData.status === 'sync_pending'
+      ? `The first scheduled ${storeName} sync will add the current release details.`
+      : platform === 'android' ? 'Version details will appear here when Google Play makes the listing available.' : 'Version details will appear here when Apple makes the listing available.';
     if (date) date.textContent = '';
     if (notes) notes.textContent = `Release notes and previous versions are synced automatically from ${storeName}.`;
     if (link) link.hidden = !platformData.appStoreUrl;
@@ -290,9 +292,10 @@ const loadAppStoreUpdates = async () => {
       const notes = card.querySelector('[data-update-notes]');
       const link = card.querySelector('[data-update-link]');
       const history = card.querySelector('[data-update-history]');
+      const storeName = card.dataset.selectedPlatform === 'android' ? 'Google Play' : 'App Store';
 
       if (title) title.textContent = 'Unable to load updates';
-      if (version) version.textContent = 'The App Store feed is temporarily unavailable.';
+      if (version) version.textContent = `The ${storeName} feed is temporarily unavailable.`;
       if (date) date.textContent = '';
       if (notes) notes.textContent = 'Please try refreshing this page in a moment.';
       if (history) {

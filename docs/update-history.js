@@ -92,6 +92,7 @@ const renderUpdateHistory = (element, appData, backfilledReleaseHistory = []) =>
 
   const currentIdentity = releaseIdentity(currentReleaseFromApp(platformData));
   const previousUpdates = releases.filter((release) => releaseIdentity(release) !== currentIdentity);
+  const storeName = (element.dataset.selectedPlatform || 'ios') === 'android' ? 'Google Play' : 'App Store';
   history.hidden = false;
 
   const details = document.createElement('details');
@@ -106,7 +107,7 @@ const renderUpdateHistory = (element, appData, backfilledReleaseHistory = []) =>
   list.className = 'update-history-list';
 
   if (previousUpdates.length === 0) {
-    appendHistoryText(list, 'p', 'update-history-empty', 'No earlier App Store updates were found for this app yet.');
+    appendHistoryText(list, 'p', 'update-history-empty', `No earlier ${storeName} updates were found for this app yet.`);
   } else {
     previousUpdates.forEach((release) => {
       const item = document.createElement('article');

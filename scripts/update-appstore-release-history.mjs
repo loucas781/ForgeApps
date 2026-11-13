@@ -28,6 +28,12 @@ const APPS = [
     name: 'WatchCue',
     appId: '6790001201',
     fallbackStoreUrl: 'https://apps.apple.com/us/app/watchcue/id6790001201'
+  },
+  {
+    key: 'fruit_squash',
+    name: 'Fruit Squash',
+    appId: '6475038483',
+    fallbackStoreUrl: 'https://apps.apple.com/gb/app/fruit-squash/id6475038483'
   }
 ];
 

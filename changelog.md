@@ -1,5 +1,19 @@
 # Changelog
 
+## 2026-11-13
+
+- Added a dedicated Fruit Squash page to the Louis Birch Studio portfolio, with live App Store and Google Play links.
+- Added Fruit Squash to the weekly store update workflow, including full App Store version-history backfill and Google Play version tracking.
+- Added a store selector so players can switch between Fruit Squash iOS and Android release notes and previous updates.
+- Updated the home page, site navigation, contact form, privacy policy, and terms to include Fruit Squash.
+- Kept the existing Fruit Squash game available while noting that a refreshed version is in development.
+- Introducing Louis Birch Studio, the independent home for this growing collection of apps.
+- Explore Forge Apps as a dedicated collection featuring PayForge, ForgeShift, and ForgeTrack.
+- Find WatchCue alongside the wider portfolio while keeping it distinct from Forge Apps.
+- Preserved all existing app page URLs, store links, and release-history pages.
+- Refreshed navigation, page titles, support details, and legal pages to reflect the new creator-led identity.
+- Updated support prompts to request platform-neutral device and operating system details.
+
 ## 2026-09-05
 
 - Updated billing support guidance to cover both the App Store and Google Play.
