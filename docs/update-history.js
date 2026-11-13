@@ -1,4 +1,5 @@
 (() => {
+const assetDirectory = new URL('./assets/', document.currentScript.src);
 const updateHistoryCards = document.querySelectorAll('[data-app-updates]');
 
 const formatHistoryReleaseDate = (isoDate) => {
@@ -140,8 +141,8 @@ const loadUpdateHistory = async () => {
 
   try {
     const [updatesResponse, historyResponse] = await Promise.all([
-      fetch('./assets/appstore-updates.json', { cache: 'no-store' }),
-      fetch('./assets/appstore-release-history.json', { cache: 'no-store' }).catch(() => null)
+      fetch(new URL('appstore-updates.json', assetDirectory), { cache: 'no-store' }),
+      fetch(new URL('appstore-release-history.json', assetDirectory), { cache: 'no-store' }).catch(() => null)
     ]);
 
     if (!updatesResponse.ok) throw new Error(`Failed to load app updates: ${updatesResponse.status}`);

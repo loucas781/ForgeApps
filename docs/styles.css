@@ -654,6 +654,49 @@ a.platform-card:hover {
 
 .product-card .btn { margin-top: 0; }
 
+.studio-project-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-height: 310px;
+}
+
+.studio-project-card > p:not(.eyebrow) { flex: 1; }
+.studio-project-card .btn { margin-top: 18px; }
+
+.project-icon-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 76px;
+  margin-bottom: 10px;
+}
+
+.project-icon-row img {
+  width: 58px;
+  height: 58px;
+  border-radius: 22.5%;
+  object-fit: contain;
+  box-shadow: var(--shadow-soft);
+}
+
+.project-icon-row img:only-child { width: 72px; height: 72px; }
+
+.fruit-squash-icon-wrap {
+  display: grid;
+  min-height: 320px;
+  place-items: center;
+}
+
+.fruit-squash-app-icon {
+  display: block;
+  width: clamp(210px, 28vw, 310px);
+  aspect-ratio: 1;
+  border-radius: 22.5%;
+  object-fit: cover;
+  box-shadow: 0 28px 75px rgba(0, 0, 0, 0.3), 0 0 0 1px var(--border-strong);
+}
+
 .watchcue-showcase {
   display: grid;
   grid-template-columns: minmax(0, 1.15fr) minmax(240px, 0.85fr);

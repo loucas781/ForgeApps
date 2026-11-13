@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact | Louis Birch Studio</title>
+  <meta name="description" content="Contact Louis Birch about PayForge, ForgeShift, ForgeTrack, WatchCue, Fruit Squash, or another software project." />
+  <script>
+    (function () {
+      try {
+        var theme = localStorage.getItem('forge-theme') || 'system';
+        if (theme !== 'system') document.documentElement.dataset.theme = theme;
+      } catch (error) {}
+    })();
+  </script>
+  <link rel="stylesheet" href="../styles.css?v=20261113-6" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="site-shell">
+    <nav class="navbar glass" aria-label="Main navigation">
+      <a class="brand" href="../" aria-label="Louis Birch Studio home"><img class="brand-mark" src="../assets/louis-birch-logo.png" alt="" width="58" height="38" /><span class="brand-copy"><strong>Louis Birch</strong><small>Software studio</small></span></a>
+      <div class="nav-actions">
+        <div class="nav-links">
+          <a href="../">Home</a>
+          <a href="../forgeapps/">Forge Apps</a>
+          <a href="../watchcue/">WatchCue</a>
+          <a href="../fruit-squash/">Fruit Squash</a>
+          <a href="../contact/" aria-current="page">Contact</a>
+        </div>
+        <div class="theme-switcher" role="group" aria-label="Theme preference">
+          <button type="button" data-theme-choice="system" aria-pressed="true" aria-label="Use system theme"><span aria-hidden="true">S</span><span class="sr-only">System</span></button>
+          <button type="button" data-theme-choice="light" aria-pressed="false" aria-label="Use light theme"><span aria-hidden="true">L</span><span class="sr-only">Light</span></button>
+          <button type="button" data-theme-choice="dark" aria-pressed="false" aria-label="Use dark theme"><span aria-hidden="true">D</span><span class="sr-only">Dark</span></button>
+        </div>
+      </div>
+    </nav>
+    <main id="main">
+      <header class="hero compact glass">
+        <p class="eyebrow">Louis Birch · Support</p>
+        <h1>Tell us what happened.</h1>
+        <p class="subtitle">Use the form below to send a message about any app or software project. Submitting opens your email app with the message prepared for support@louisbirch.co.uk.</p>
+      </header>
+      <section class="section glass split">
+        <div class="contact-helper">
+          <p class="eyebrow">Helpful details</p>
+          <h2>Faster support starts here.</h2>
+          <p>Please include the app, your device model, operating system and store, plus the steps that led to the issue. For billing issues, tell us whether the purchase was made through the App Store or Google Play. Screenshots can be attached after your email app opens.</p>
+          <ul class="pill-list"><li>App name</li><li>Device and OS</li><li>What you expected</li><li>What happened instead</li></ul>
+        </div>
+        <form class="contact-form" data-contact-form>
+          <div class="form-row">
+            <label>Name<input name="name" autocomplete="name" placeholder="Your name" /></label>
+            <label>Email<input name="email" type="email" autocomplete="email" placeholder="you@example.com" /></label>
+          </div>
+          <div class="form-row">
+            <label>App<select name="app"><option>PayForge</option><option>ForgeShift</option><option>ForgeTrack</option><option>WatchCue</option><option>Fruit Squash</option><option>Forge Apps</option></select></label>
+            <label>Device / OS<input name="device" placeholder="iPhone 15, iOS 18 or Pixel 9, Android 16" /></label>
+          </div>
+          <label>Message<textarea name="message" required placeholder="Describe the issue, request, or feedback in as much detail as you can."></textarea></label>
+          <p class="form-note">This static form does not store your message. It prepares an email on your device.</p>
+          <button class="btn primary" type="submit">Prepare Email</button>
+        </form>
+      </section>
+    </main>
+    <footer class="footer"><span>&copy; 2026 Louis Birch <span class="footer-note">Independent software · Forge Apps · WatchCue · Fruit Squash</span></span><span><a href="../privacy/">Privacy</a> &middot; <a href="../terms/">Terms</a></span></footer>
+  </div>
+  <script src="../site.js?v=20261113-6"></script>
+</body>
+</html>

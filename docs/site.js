@@ -1,6 +1,7 @@
 const themeButtons = document.querySelectorAll('[data-theme-choice]');
 const themeIcons = document.querySelectorAll('[data-theme-icon]');
 const systemTheme = window.matchMedia('(prefers-color-scheme: dark)');
+const siteAssetsUrl = new URL('./assets/', document.currentScript.src);
 
 const getStoredTheme = () => {
   try {
@@ -271,7 +272,7 @@ const loadAppStoreUpdates = async () => {
   if (appUpdateCards.length === 0) return;
 
   try {
-    const response = await fetch('./assets/appstore-updates.json', { cache: 'no-store' });
+    const response = await fetch(new URL('appstore-updates.json', siteAssetsUrl), { cache: 'no-store' });
     if (!response.ok) throw new Error(`Failed to load app updates: ${response.status}`);
     const payload = await response.json();
     appUpdatesPayload = payload;

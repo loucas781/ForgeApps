@@ -3,111 +3,11 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>WatchCue | Louis Birch Studio</title>
-  <meta name="description" content="WatchCue is a focused way to track the shows and movies you care about, follow viewing progress, and see what is coming next." />
-  <script>
-    (function () {
-      try {
-        var theme = localStorage.getItem('forge-theme') || 'system';
-        if (theme !== 'system') document.documentElement.dataset.theme = theme;
-      } catch (error) {}
-    })();
-  </script>
-  <link rel="stylesheet" href="./styles.css?v=20261113-5" />
+  <meta http-equiv="refresh" content="0; url=./watchcue/" />
+  <link rel="canonical" href="./watchcue/" />
+  <title>Watchcue | Louis Birch Studio</title>
 </head>
 <body>
-  <a class="skip-link" href="#main">Skip to content</a>
-  <div class="site-shell">
-    <nav class="navbar glass" aria-label="Main navigation">
-      <a class="brand" href="https://louisbirch.co.uk/" aria-label="Visit Louis Birch portfolio home"><img class="brand-mark" src="./assets/louis-birch-logo.png" alt="" width="58" height="38" /><span class="brand-copy"><strong>Louis Birch</strong><small>Software studio</small></span></a>
-      <div class="nav-actions">
-        <div class="nav-links">
-          <a href="./">Home</a>
-          <a href="./forgeapps.html">Forge Apps</a>
-          <a href="./watchcue.html" aria-current="page">WatchCue</a>
-          <a href="./fruit-squash.html">Fruit Squash</a>
-          <a href="./contact.html">Contact</a>
-        </div>
-        <div class="theme-switcher" role="group" aria-label="Theme preference">
-          <button type="button" data-theme-choice="system" aria-pressed="true" aria-label="Use system theme"><span aria-hidden="true">S</span><span class="sr-only">System</span></button>
-          <button type="button" data-theme-choice="light" aria-pressed="false" aria-label="Use light theme"><span aria-hidden="true">L</span><span class="sr-only">Light</span></button>
-          <button type="button" data-theme-choice="dark" aria-pressed="false" aria-label="Use dark theme"><span aria-hidden="true">D</span><span class="sr-only">Dark</span></button>
-        </div>
-      </div>
-    </nav>
-
-    <main id="main">
-      <header class="hero watchcue-hero glass">
-        <div>
-          <div class="status-line"><span class="status-dot" aria-hidden="true"></span> Available on the App Store</div>
-          <p class="eyebrow">Beyond the Forge suite</p>
-          <h1>WatchCue</h1>
-          <p class="subtitle">WatchCue is a simple, focused way to keep up with the shows and movies you care about. Build your personal library, track episodes as you watch them, rate favourites, and always know what is coming next.</p>
-          <div class="actions">
-            <a class="btn primary" href="https://apps.apple.com/us/app/watchcue/id6790001201" target="_blank" rel="noopener noreferrer">View on the App Store</a>
-            <a class="btn" href="./contact.html">Ask about WatchCue</a>
-            <a class="btn" href="./">Back to all apps</a>
-            <a class="btn" href="./privacy.html">Privacy</a>
-            <a class="btn" href="./terms.html">Terms</a>
-          </div>
-        </div>
-        <div class="watchcue-visual" aria-hidden="true">
-          <img class="watchcue-app-icon watchcue-app-icon-hero" src="./assets/watchcue-icon.png" data-light-src="./assets/watchcue-icon.png" data-dark-src="./assets/watchcue-icon-dark.png" data-theme-icon alt="" width="1024" height="1024" />
-          <div class="watchcue-orbit"></div>
-        </div>
-      </header>
-
-      <section class="section glass split">
-        <div>
-          <p class="eyebrow">Your watchlist, made clearer</p>
-          <h2>Spend less time searching. Spend more time watching.</h2>
-          <p class="subtitle">Keep your library, viewing progress, favourites, release calendar, and personal notes together in one focused place.</p>
-        </div>
-        <ul class="check-list">
-          <li>Track TV shows, movies, episodes, and seasons</li>
-          <li>Organise titles by Watching, Caught Up, On Hold, Dropped, Watchlist, and Watched</li>
-          <li>Browse upcoming releases in an agenda or interactive calendar</li>
-          <li>Back up and restore your viewing data with iCloud</li>
-        </ul>
-      </section>
-
-      <section class="section glass">
-        <div class="section-header">
-          <div>
-            <p class="eyebrow">WatchCue features</p>
-            <h2>Everything you want to remember.</h2>
-          </div>
-          <p>WatchCue keeps the details of your viewing life close at hand, from the next episode to the film you saved for later.</p>
-        </div>
-        <div class="grid feature-grid">
-          <div class="tile"><h3>Track progress</h3><p>Mark individual episodes, whole seasons, or every season as watched and see your progress at a glance.</p></div>
-          <div class="tile"><h3>Know what is next</h3><p>Browse upcoming episodes and movie releases, then set reminders for the titles you follow.</p></div>
-          <div class="tile"><h3>Make it yours</h3><p>Rate shows and movies, add personal notes for films, and customise layouts, checkmark colours, and detail visibility.</p></div>
-          <div class="tile"><h3>Your data, available</h3><p>Keep saved library data available with local caching, back up and restore with iCloud, and export or import your WatchCue data.</p></div>
-        </div>
-      </section>
-
-      <section class="section glass app-update-card" data-app-updates="watchcue">
-        <div class="section-header">
-          <div>
-            <p class="eyebrow">App Store updates</p>
-            <h2 data-update-title>Latest WatchCue update</h2>
-          </div>
-          <p data-update-date></p>
-        </div>
-        <p class="subtitle" data-update-version>WatchCue updates are synced automatically from the App Store.</p>
-        <p class="update-notes" data-update-notes>Release notes and previous versions are synced automatically from the App Store.</p>
-        <div class="update-history-slot" data-update-history></div>
-        <a class="btn" data-update-link href="https://apps.apple.com/us/app/watchcue/id6790001201" target="_blank" rel="noopener noreferrer">View on App Store</a>
-      </section>
-    </main>
-
-    <footer class="footer">
-      <span>&copy; 2026 Louis Birch <span class="footer-note">Independent software · Forge Apps · WatchCue · Fruit Squash</span></span>
-      <span><a href="./privacy.html">Privacy</a> &middot; <a href="./terms.html">Terms</a> &middot; <a href="./contact.html">Contact</a></span>
-    </footer>
-  </div>
-  <script src="./site.js?v=20261113-5"></script>
-  <script src="./update-history.js?v=20261113-5"></script>
+  <p>This page has moved to <a href="./watchcue/">Watchcue</a>.</p>
 </body>
 </html>
